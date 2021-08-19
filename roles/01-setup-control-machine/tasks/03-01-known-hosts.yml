@@ -1,0 +1,4 @@
+---
+- name: Adding the fingerprint of the hosts into the know_hosts file
+  include_tasks: "03-02-truenas-known-hosts.yml"
+  loop: "{{ groups['TrueNAS'] }}"

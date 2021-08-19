@@ -1,0 +1,9 @@
+---
+# The domain name of the HomeLab.
+domain: "aprendendo.com.br"
+
+# The id that will be used to retrieve the truenas's root password saved in the MacOSX Keychain. It will be the same for all hosts.
+truenas_root_password_id: "truenas_root_password"
+
+# The id that will be used to retrieve the truenas's SMTP password saved in the MacOSX Keychain. It will be the same for all hosts.
+truenas_smtp_password_id: "truenas-smtp-password"
