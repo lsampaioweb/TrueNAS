@@ -2,10 +2,10 @@
 - name: Setting up the control machine to run Ansible scripts
   hosts: "ControlMachine"
   vars_prompt:
-    - name: "truenas_root_password"
+    - name: "root_password"
       prompt: "What is the TrueNAS's root password? (empty to skip) "
       private: True
-    - name: "truenas_smtp_password"
+    - name: "smtp_password"
       prompt: "What is the TrueNAS's SMTP password? (empty to skip) "
       private: True
       

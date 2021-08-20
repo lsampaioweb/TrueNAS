@@ -3,7 +3,19 @@
 domain: "aprendendo.com.br"
 
 # The id that will be used to retrieve the truenas's root password saved in the MacOSX Keychain. It will be the same for all hosts.
-truenas_root_password_id: "truenas_root_password"
+root_password_id: "truenas-root-password"
 
 # The id that will be used to retrieve the truenas's SMTP password saved in the MacOSX Keychain. It will be the same for all hosts.
-truenas_smtp_password_id: "truenas-smtp-password"
+smtp_password_id: "truenas-smtp-password"
+
+# The name of the root user used in TrueNAS.
+root_user: "root"
+
+# The password of the root user used in TrueNAS.
+root_password: "{{ lookup('pipe', 'security find-generic-password -a $USER -s {{ root_password_id }} -w') }}"
+
+# The user that will be used to connect on each host.
+ansible_user: "{{ root_user }}"
+
+# At this point we don't have a SSH Keypair yet. So it is necessary to connect using the root's password.
+ansible_password: "{{ root_password }}"
