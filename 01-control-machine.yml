@@ -8,5 +8,6 @@
     - name: "truenas_smtp_password"
       prompt: "What is the TrueNAS's SMTP password? (empty to skip) "
       private: True
+      
   roles:
-    - 01-setup-control-machine
+    - 01-control-machine

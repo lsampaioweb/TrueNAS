@@ -3,7 +3,7 @@
 The playbook can setup one or more servers running TrueNAS Core 12.
 
 # Roles you can execute:
-1. [Setup](roles/01-setup-control-machine/README.md) the control machine to run Ansible scripts.
+1. [Setup](roles/01-control-machine/README.md) the control machine to run Ansible scripts.
 
 # Links:
 
