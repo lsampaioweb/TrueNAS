@@ -1,0 +1,19 @@
+{
+  "servers": 4,
+  "bindip": [],
+
+  "v4": false,
+  "v4_domain": "",
+  "v4_v3owner": false,
+  "v4_krb": false,
+
+  "mountd_port": null,
+  "rpclockd_port": null,
+  "rpcstatd_port": null,
+
+  "udp": false,
+  "allow_nonroot": false,
+  "userd_manage_gids": false,
+  "mountd_log": false,
+  "statd_lockd_log": false
+}
