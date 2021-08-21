@@ -12,4 +12,3 @@
       Content-Type: "{{ Content_Type | default('application/json') }}"
       Authorization: "Bearer {{ api_key }}"
   register: "response"
-  
