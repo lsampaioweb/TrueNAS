@@ -1,3 +1,6 @@
 ---
 - name: Setting up the SSH service
   import_tasks: "01-ssh.yml"
+
+- name: Setting up the S.M.A.R.T. service
+  import_tasks: "02-smartd.yml"

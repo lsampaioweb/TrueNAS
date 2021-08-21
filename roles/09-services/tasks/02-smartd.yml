@@ -4,27 +4,27 @@
   vars:
     url: "{{ api_url }}/service"
 
-- name: Getting the current settings of the SSH service
+- name: Getting the current settings of the S.M.A.R.T. service
   set_fact:
-    json: "{{ response.json | json_query('[?service==`ssh`]') | first }}"
+    json: "{{ response.json | json_query('[?service==`smartd`]') | first }}"
 
 - name: Printing the json
   debug:
     var: "json"
 
-- name: Setting up the configuration for the SSH service
+- name: Setting up the configuration for the S.M.A.R.T. service
   include_tasks: "{{ role_common_task_web_put }}"
   vars:
-    url: "{{ api_url }}/ssh"
-    body: "{{ lookup('template', 'ssh-config.json') }}"
+    url: "{{ api_url }}/smart"
+    body: "{{ lookup('template', 'smartd-config.json') }}"
 
-- name: Enabling the SSH service to start on boot
+- name: Enabling the S.M.A.R.T. service to start on boot
   include_tasks: "{{ role_common_task_web_put }}"
   vars:
     url: "{{ api_url }}/service/id/{{ json.id }}"
     body: "{{ lookup('template', 'service-enable.json') }}"
 
-- name: Starting the SSH service
+- name: Starting the S.M.A.R.T. service
   include_tasks: "{{ role_common_task_web_post }}"
   vars:
     url: "{{ api_url }}/service/start"
