@@ -46,11 +46,11 @@
   include_tasks: "{{ role_common_task_web_put }}"
   vars:
     url: "{{ api_url }}/service/id/{{ json.id }}"
-    body: "{{ lookup('template', 'service-enable.json') }}"
+    body: "{{ lookup('template', 'service/enable.json') }}"
 
 - name: Starting the iSCSI service
   include_tasks: "{{ role_common_task_web_post }}"
   vars:
     url: "{{ api_url }}/service/start"
     service: "{{ json.service }}"
-    body: "{{ lookup('template', 'service-start.json') }}"
+    body: "{{ lookup('template', 'service/start.json') }}"
