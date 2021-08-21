@@ -16,7 +16,7 @@
   include_tasks: "{{ role_common_task_web_put }}"
   vars:
     url: "{{ api_url }}/smart"
-    body: "{{ lookup('template', 'smartd-config.json') }}"
+    body: "{{ lookup('template', 'smartd/config.json') }}"
 
 - name: Enabling the S.M.A.R.T. service to start on boot
   include_tasks: "{{ role_common_task_web_put }}"

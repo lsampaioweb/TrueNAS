@@ -16,7 +16,7 @@
   include_tasks: "{{ role_common_task_web_put }}"
   vars:
     url: "{{ api_url }}/ssh"
-    body: "{{ lookup('template', 'ssh-config.json') }}"
+    body: "{{ lookup('template', 'ssh/config.json') }}"
 
 - name: Enabling the SSH service to start on boot
   include_tasks: "{{ role_common_task_web_put }}"
