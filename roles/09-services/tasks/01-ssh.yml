@@ -1,0 +1,32 @@
+---
+- name: Getting the list of services 
+  include_tasks: "{{ role_common_task_web_get }}"
+  vars:
+    url: "{{ api_url }}/service"
+
+- name: Getting the current settings of the SSH service
+  set_fact:
+    ssh_json: "{{ response.json | json_query('[?service==`ssh`]') | first }}"
+
+- name: Printing the ssh_json
+  debug:
+    var: "ssh_json"
+
+- name: Setting up the configuration for the SSH service
+  include_tasks: "{{ role_common_task_web_put }}"
+  vars:
+    url: "{{ api_url }}/ssh"
+    body: "{{ lookup('template', 'ssh-config.json') }}"
+
+- name: Enabling the SSH service to start on boot
+  include_tasks: "{{ role_common_task_web_put }}"
+  vars:
+    url: "{{ api_url }}/service/id/{{ ssh_json.id }}"
+    body: "{{ lookup('template', 'service-enable.json') }}"
+
+- name: Starting the SSH service
+  include_tasks: "{{ role_common_task_web_post }}"
+  vars:
+    url: "{{ api_url }}/service/start"
+    service: "{{ ssh_json.service }}"
+    body: "{{ lookup('template', 'service-start.json') }}"

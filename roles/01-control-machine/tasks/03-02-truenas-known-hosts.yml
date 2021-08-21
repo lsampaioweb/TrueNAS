@@ -1,6 +1,6 @@
 ---
 - name: Adding the fingerprint of host {{ item }} into the know_hosts file
-  include_tasks: "roles/common/tasks/known_hosts/add.yml"
+  include_tasks: "{{ role_common_task_known_hosts_add }}"
   loop:
     - { name: "{{ item }}"                        , key: "{{ item }}" }
     - { name: "{{ item }}.{{ domain }}"           , key: "{{ item }}.{{ domain }}" }

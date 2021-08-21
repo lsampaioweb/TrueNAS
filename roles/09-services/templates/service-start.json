@@ -1,0 +1,6 @@
+{
+  "service": "{{ service }}",
+  "service-control": {
+    "ha_propagate": true
+  }
+}

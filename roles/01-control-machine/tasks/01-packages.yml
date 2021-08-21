@@ -1,6 +1,6 @@
 ---
 - name: Installing pip packages
-  import_tasks: "roles/common/tasks/packages/pip.yml"
+  include_tasks: "{{ role_common_task_packages_pip }}"
 
 - name: Installing SSHPass
-  import_tasks: "roles/common/tasks/packages/sshpass.yml"
+  include_tasks: "{{ role_common_task_packages_sshpass }}"

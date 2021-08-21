@@ -1,0 +1,3 @@
+---
+# The base url of the TrueNAS server.
+base_url: "{{ http_protocol }}truenas01.aprendendo.com.br"

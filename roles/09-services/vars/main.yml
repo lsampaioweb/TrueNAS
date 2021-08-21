@@ -1,0 +1,6 @@
+---
+# The protocol that will be used. Can be HTTP or HTTPS.
+http_protocol: "https://"
+
+# The path of the api's.
+api_url: "{{ base_url }}/api/v2.0"

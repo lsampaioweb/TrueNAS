@@ -1,0 +1,15 @@
+---
+- name: Making a request to the URL '{{ url }}' using the POST method
+  delegate_to: "{{ delegate_to | default(omit) }}"
+  uri:
+    method: "POST"
+    url: "{{ url }}"
+    return_content: "{{ return_content | default('yes') }}"
+    status_code: "{{ status_code | default(omit) }}"
+    body_format: "{{ body_format | default('json') }}"
+    body: "{{ body | default(omit) }}"
+    headers:
+      Content-Type: "{{ Content_Type | default('application/json') }}"
+      Authorization: "Bearer {{ api_key }}"
+  register: "response"
+  

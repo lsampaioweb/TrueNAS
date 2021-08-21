@@ -8,14 +8,44 @@ root_password_id: "truenas-root-password"
 # The id that will be used to retrieve the truenas's SMTP password saved in the MacOSX Keychain. It will be the same for all hosts.
 smtp_password_id: "truenas-smtp-password"
 
+# The id that will be used to retrieve the root's API Key saved in the MacOSX Keychain. It will be used to make web requests.
+api_key_id: "truenas-api-key"
+
 # The name of the root user used in TrueNAS.
 root_user: "root"
-
-# The password of the root user used in TrueNAS.
-root_password: "{{ lookup('pipe', 'security find-generic-password -a $USER -s {{ root_password_id }} -w') }}"
 
 # The user that will be used to connect on each host.
 ansible_user: "{{ root_user }}"
 
+# The password of the root user used in TrueNAS.
+root_password: "{{ lookup('pipe', 'security find-generic-password -a $USER -s {{ root_password_id }} -w') }}"
+
 # At this point we don't have a SSH Keypair yet. So it is necessary to connect using the root's password.
 ansible_password: "{{ root_password }}"
+
+# The password of the root user used in TrueNAS.
+api_key: "{{ lookup('pipe', 'security find-generic-password -a $USER -s {{ api_key_id }} -w') }}"
+
+# The path of the tasks in the common role.
+role_common_task: "roles/common/tasks"
+
+# The path of the known_hosts add task.
+role_common_task_known_hosts_add: "{{ role_common_task }}/known_hosts/add.yml"
+
+# The path of the packages pip task.
+role_common_task_packages_pip: "{{ role_common_task }}/packages/pip.yml"
+
+# The path of the packages sshpass task.
+role_common_task_packages_sshpass: "{{ role_common_task }}/packages/sshpass.yml"
+
+# The path of the password add task.
+role_common_task_password_add: "{{ role_common_task }}/passwords/add.yml"
+
+# The path of the web get task.
+role_common_task_web_get: "{{ role_common_task }}/web/get.yml"
+
+# The path of the web post task.
+role_common_task_web_post: "{{ role_common_task }}/web/post.yml"
+
+# The path of the web put task.
+role_common_task_web_put: "{{ role_common_task }}/web/put.yml"

@@ -1,0 +1,6 @@
+---
+- name: Setting up the services that will be used by TrueNAS
+  hosts: "TrueNAS"
+  
+  roles:
+    - 09-services

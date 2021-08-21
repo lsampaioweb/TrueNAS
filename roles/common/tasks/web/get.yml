@@ -1,0 +1,13 @@
+---
+- name: Making a request to the URL '{{ url }}' using the GET method
+  delegate_to: "{{ delegate_to | default(omit) }}"
+  uri:
+    method: "GET"
+    url: "{{ url }}"
+    return_content: "{{ return_content | default(omit) }}"
+    status_code: "{{ status_code | default(omit) }}"
+    headers:
+      Content-Type: "{{ Content_Type | default('application/json') }}"
+      Authorization: "Bearer {{ api_key }}"
+  register: "response"
+  

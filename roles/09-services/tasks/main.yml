@@ -1,0 +1,3 @@
+---
+- name: Setting up the SSH service
+  import_tasks: "01-ssh.yml"
