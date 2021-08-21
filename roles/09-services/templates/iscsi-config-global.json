@@ -1,0 +1,6 @@
+{
+  "basename": "iqn.2005-10.org.freenas.ctl",
+  "isns_servers": [],
+  "pool_avail_threshold": null,
+  "alua": false
+}

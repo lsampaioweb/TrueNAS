@@ -17,6 +17,11 @@ Run the command in the terminal:
   1. Enable the service to start on boot.
   1. Start the service.
 
+## 3. Setup and start the iSCSI service:
+  1. Set the default settings.
+  1. Enable the service to start on boot.
+  1. Start the service.
+
 # Created by: 
 
 1. Luciano Sampaio.

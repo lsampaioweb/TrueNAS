@@ -1,0 +1,8 @@
+{
+  "name": "string",
+  "alias": "string",
+  "mode": "ISCSI",
+  "groups": [
+    {}
+  ]
+}

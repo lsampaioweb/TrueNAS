@@ -1,0 +1,9 @@
+{
+  "initiators": [
+    null
+  ],
+  "auth_network": [
+    "string"
+  ],
+  "comment": "string"
+}

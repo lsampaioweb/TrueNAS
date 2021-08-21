@@ -1,0 +1,7 @@
+{
+  "tag": 0,
+  "user": "string",
+  "secret": "string",
+  "peeruser": "string",
+  "peersecret": "string"
+}
