@@ -14,6 +14,12 @@ api_key_id: "truenas-api-key"
 # The password of the root user used in TrueNAS.
 api_key: "{{ lookup('pipe', 'security find-generic-password -a $USER -s {{ api_key_id }} -w') }}"
 
+# The protocol that will be used. Can be HTTP or HTTPS.
+http_protocol: "https://"
+
+# The path of the api's.
+api_url: "{{ base_url }}/api/v2.0"
+
 # The path of the tasks in the common role.
 role_common_task: "roles/common/tasks"
 
