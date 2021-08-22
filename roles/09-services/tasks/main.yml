@@ -6,5 +6,4 @@
     - { display_name: "S.M.A.R.T."  , name: "smartd"}
     - { display_name: "NFS"         , name: "nfs" }
     # - { display_name: "iSCSI"       , name: "iscsitarget" }
-  loop_control:
-    loop_var: service
+  

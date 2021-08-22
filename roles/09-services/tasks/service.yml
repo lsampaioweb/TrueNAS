@@ -1,34 +1,36 @@
 ---
 - name: Including the file that contains specific settings
-  include_vars: "host_vars/{{ item }}.yml"
+  include_vars: "host_vars/{{ host }}.yml"
 
 - name: Getting the list of services 
   include_tasks: "{{ role_common_task_web_get }}"
   vars:
     url: "{{ api_url }}/service"
 
-- name: Getting the current settings of the {{ service.display_name }} service
+- name: Getting the current settings of the {{ item.display_name }} service
   set_fact:
     json: "{{ response.json | json_query(querystr) | first }}"
   vars:
-    querystr: "[?service=='{{ service.name }}']"
+    querystr: "[?service=='{{ item.name }}']"
 
-- name: Printing the json
+- name: Printing the current state of the service
   debug:
     var: "json"
 
-- name: Setting up the configuration for the {{ service.display_name }} service
-  include_tasks: "{{ service.name }}/config.yml"
+- name: Including the task that will setup the service with the desired values
+  include_tasks: "{{ item.name }}/config.yml"
 
-- name: Enabling the {{ service.display_name }} service to start on boot
+- name: Enabling the {{ item.display_name }} service to start on boot
   include_tasks: "{{ role_common_task_web_put }}"
   vars:
     url: "{{ api_url }}/service/id/{{ json.id }}"
-    body: "{{ lookup('template', 'service/enable.json') }}"
+    body: "{{ lookup('template', 'service/enable.json') }}"  
+  when: json.enable != true
 
-- name: Starting the {{ service.display_name }} service
+- name: Starting the {{ item.display_name }} service
   include_tasks: "{{ role_common_task_web_post }}"
   vars:
     url: "{{ api_url }}/service/start"
     service: "{{ json.service }}"
     body: "{{ lookup('template', 'service/start.json') }}"
+  when: json.state != "RUNNING"

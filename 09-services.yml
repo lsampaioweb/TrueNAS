@@ -7,3 +7,5 @@
       include_role:
         name: 09-services
       loop: "{{ groups['TrueNAS'] }}"
+      loop_control:
+          loop_var: host
