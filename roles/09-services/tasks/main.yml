@@ -1,12 +1,10 @@
 ---
-- name: Setting up the SSH service
-  include_tasks: "01-ssh.yml"
-
-- name: Setting up the S.M.A.R.T. service
-  include_tasks: "02-smartd.yml"
-
-- name: Setting up the NFS service
-  include_tasks: "03-nfs.yml"
-
-- name: Setting up the iSCSI service
-  include_tasks: "04-iscsi.yml"
+- name: Setting up the services that will be used by TrueNAS
+  include_tasks: "service.yml"
+  loop:
+    - { display_name: "SSH"         , name: "ssh" }
+    - { display_name: "S.M.A.R.T."  , name: "smartd"}
+    - { display_name: "NFS"         , name: "nfs" }
+    # - { display_name: "iSCSI"       , name: "iscsitarget" }
+  loop_control:
+    loop_var: service

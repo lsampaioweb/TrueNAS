@@ -1,0 +1,30 @@
+---
+# - name: Setting up the configuration for the {{ service.display_name }} service
+#   include_tasks: "{{ role_common_task_web_put }}"
+#   vars:
+#     url: "{{ api_url }}/iscsi/global"
+#     body: "{{ lookup('template', '{{ service.name }}/config-global.json') }}"
+
+# - name: Setting up the configuration for the {{ service.display_name }} service
+#   include_tasks: "{{ role_common_task_web_post }}"
+#   vars:
+#     url: "{{ api_url }}/iscsi/portal"
+#     body: "{{ lookup('template', '{{ service.name }}/config-portal.json') }}"
+
+# - name: Setting up the configuration for the {{ service.display_name }} service
+#   include_tasks: "{{ role_common_task_web_post }}"
+#   vars:
+#     url: "{{ api_url }}/iscsi/initiator"
+#     body: "{{ lookup('template', '{{ service.name }}/config-initiator.json') }}"
+
+# - name: Setting up the configuration for the {{ service.display_name }} service
+#   include_tasks: "{{ role_common_task_web_post }}"
+#   vars:
+#     url: "{{ api_url }}/iscsi/auth"
+#     body: "{{ lookup('template', '{{ service.name }}/config-auth.json') }}"
+
+# - name: Setting up the configuration for the {{ service.display_name }} service
+#   include_tasks: "{{ role_common_task_web_post }}"
+#   vars:
+#     url: "{{ api_url }}/iscsi/target"
+#     body: "{{ lookup('template', '{{ service.name }}/config-target.json') }}"
