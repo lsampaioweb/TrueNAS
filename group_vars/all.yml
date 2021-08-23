@@ -44,29 +44,44 @@ role_common_task_password_add: "{{ role_common_task_passwords }}/add.yml"
 # The path of the password get task.
 role_common_task_password_get: "{{ role_common_task_passwords }}/get.j2"
 
-# The path of the system folder.
-role_common_task_system: "{{ role_common_task }}/system"
-
-# The path of the system general folder.
-role_common_task_system_general: "{{ role_common_task_system }}/general"
-
-# The path of the system general certificate task.
-role_common_task_system_general_certificate: "{{ role_common_task_system_general }}/certificate.yml"
-
-# The path of the system general get settings task.
-role_common_task_system_general_settings: "{{ role_common_task_system_general }}/settings.yml"
-
-# The path of the system general ui restart task.
-role_common_task_system_general_ui_restart: "{{ role_common_task_system_general }}/ui-restart.yml"
+# The path of the uri certificate folder.
+role_common_task_uri: "{{ role_common_task }}/uri"
 
 # The path of the uri certificate folder.
-role_common_task_uri_certificate: "{{ role_common_task }}/uri/certificate"
+role_common_task_uri_certificate: "{{ role_common_task_uri }}/certificate"
 
 # The path of the uri certificate get task.
 role_common_task_uri_certificate_get: "{{ role_common_task_uri_certificate }}/get.yml"
 
 # The path of the uri certificate get task.
 role_common_task_uri_certificate_create: "{{ role_common_task_uri_certificate }}/create.yml"
+
+# The path of the uri service folder.
+role_common_task_uri_service: "{{ role_common_task_uri }}/service"
+
+# The path of the service enable task.
+role_common_task_uri_service_enable: "{{ role_common_task_uri_service }}/enable.yml"
+
+# The path of the service get task.
+role_common_task_uri_service_get: "{{ role_common_task_uri_service }}/get.yml"
+
+# The path of the service start task.
+role_common_task_uri_service_start: "{{ role_common_task_uri_service }}/start.yml"
+
+# The path of the uri system folder.
+role_common_task_uri_system: "{{ role_common_task_uri }}/system"
+
+# The path of the uri system general folder.
+role_common_task_uri_system_general: "{{ role_common_task_uri_system }}/general"
+
+# The path of the uri system general certificate task.
+role_common_task_uri_system_general_certificate: "{{ role_common_task_uri_system_general }}/certificate.yml"
+
+# The path of the uri system general get settings task.
+role_common_task_uri_system_general_settings: "{{ role_common_task_uri_system_general }}/settings.yml"
+
+# The path of the uri system general ui restart task.
+role_common_task_uri_system_general_ui_restart: "{{ role_common_task_uri_system_general }}/ui-restart.yml"
 
 # The path of the web folder.
 role_common_task_web: "{{ role_common_task }}/web"
@@ -80,11 +95,32 @@ role_common_task_web_post: "{{ role_common_task_web }}/post.yml"
 # The path of the web put task.
 role_common_task_web_put: "{{ role_common_task_web }}/put.yml"
 
+# The url of the system page
+url_system: "{{ api_url }}/system"
+
 # The url of the system general page
-url_system_general: "{{ api_url }}/system/general"
+url_system_general: "{{ url_system }}/general"
 
 # The url of the system general ui_restart page
 url_system_general_ui_restart: "{{ url_system_general }}/ui_restart"
 
 # The url of the certificate page
 url_certificate: "{{ api_url }}/certificate"
+
+# The url of the service page
+url_service: "{{ api_url }}/service"
+
+# The url of the service enable page
+url_service_enable: "{{ url_service }}/id"
+
+# The url of the service start page
+url_service_start: "{{ url_service }}/start"
+
+# The url of the nfs page
+url_nfs: "{{ api_url }}/nfs"
+
+# The url of the smart page
+url_smart: "{{ api_url }}/smart"
+
+# The url of the ssh page
+url_ssh: "{{ api_url }}/ssh"

@@ -1,0 +1,6 @@
+---
+- name: Starting a service
+  include_tasks: "{{ role_common_task_web_post }}"
+  vars:
+    url: "{{ url_service_start }}"    
+    body: "{{ lookup('template', 'service/start.json') }}"

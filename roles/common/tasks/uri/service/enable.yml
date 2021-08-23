@@ -1,0 +1,6 @@
+---
+- name: Enabling a service to start on boot
+  include_tasks: "{{ role_common_task_web_put }}"
+  vars:
+    url: "{{ url_service_enable }}/{{ service_id }}"
+    body: "{{ lookup('template', 'service/enable.json') }}"

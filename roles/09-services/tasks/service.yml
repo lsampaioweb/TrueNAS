@@ -3,9 +3,7 @@
   include_vars: "host_vars/{{ host }}.yml"
 
 - name: Getting the list of services 
-  include_tasks: "{{ role_common_task_web_get }}"
-  vars:
-    url: "{{ api_url }}/service"
+  include_tasks: "{{ role_common_task_uri_service_get }}"
 
 - name: Getting the current settings of the {{ item.display_name }} service
   set_fact:
@@ -13,24 +11,17 @@
   vars:
     querystr: "[?service=='{{ item.name }}']"
 
-- name: Printing the current state of the service
-  debug:
-    var: "json"
-
 - name: Including the task that will setup the service with the desired values
   include_tasks: "{{ item.name }}/config.yml"
 
 - name: Enabling the {{ item.display_name }} service to start on boot
-  include_tasks: "{{ role_common_task_web_put }}"
+  include_tasks: "{{ role_common_task_uri_service_enable }}"
   vars:
-    url: "{{ api_url }}/service/id/{{ json.id }}"
-    body: "{{ lookup('template', 'service/enable.json') }}"  
+    service_id: "{{ json.id }}"
   when: json.enable != true
 
 - name: Starting the {{ item.display_name }} service
-  include_tasks: "{{ role_common_task_web_post }}"
+  include_tasks: "{{ role_common_task_uri_service_start }}"
   vars:
-    url: "{{ api_url }}/service/start"
     service: "{{ json.service }}"
-    body: "{{ lookup('template', 'service/start.json') }}"
   when: json.state != "RUNNING"

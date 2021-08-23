@@ -2,5 +2,5 @@
 - name: Setting up the configuration for the {{ item.display_name }} service
   include_tasks: "{{ role_common_task_web_put }}"
   vars:
-    url: "{{ api_url }}/ssh"
+    url: "{{ url_ssh }}"
     body: "{{ lookup('template', '{{ item.name }}/config.json') }}"

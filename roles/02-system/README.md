@@ -7,8 +7,12 @@ Run the command in the terminal:
 
 # Tasks:
 
-## 1. Setup XXX:
-  1. XXX.
+## 1. Setup the SSL Certificate:
+  1. Upload the SSL certificate.
+  1. Set the new certificate as the current one.
+  1. Restart the HTTP server.
+
+## 2. XXX:
   1. XXX.
 
 # Created by: 
