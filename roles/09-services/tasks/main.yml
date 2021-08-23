@@ -1,4 +1,7 @@
 ---
+- name: Including the file that contains specific settings
+  include_vars: "host_vars/{{ host }}.yml"
+  
 - name: Setting up the services that will be used by TrueNAS
   include_tasks: "service.yml"
   loop:

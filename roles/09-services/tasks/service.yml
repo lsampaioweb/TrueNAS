@@ -1,7 +1,4 @@
 ---
-- name: Including the file that contains specific settings
-  include_vars: "host_vars/{{ host }}.yml"
-
 - name: Getting the list of services 
   include_tasks: "{{ role_common_task_uri_service_get }}"
 

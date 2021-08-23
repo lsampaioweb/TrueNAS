@@ -1,7 +1,4 @@
 ---
-- name: Including the file that contains specific settings
-  include_vars: "host_vars/{{ host }}.yml"
-
 - name: Getting the current system general settings
   include_tasks: "{{ role_common_task_uri_system_general_settings }}"
 
