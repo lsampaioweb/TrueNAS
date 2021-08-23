@@ -1,11 +1,10 @@
 {
-  "ui_certificate": 1,
-  "ui_address": ["0.0.0.0"],
+  "ui_address": {{ ui_address }},
   "ui_v6address": ["::"],
   "ui_port": 80,
   "ui_httpsport": 443,
   "ui_httpsprotocols": ["TLSv1.2", "TLSv1.3"],
-  "ui_httpsredirect": false,
+  "ui_httpsredirect": true,
   "language": "en",
   "kbdmap": "us",
   "timezone": "America/Maceio",

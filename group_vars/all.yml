@@ -77,6 +77,9 @@ role_common_task_uri_system_general: "{{ role_common_task_uri_system }}/general"
 # The path of the uri system general certificate task.
 role_common_task_uri_system_general_certificate: "{{ role_common_task_uri_system_general }}/certificate.yml"
 
+# The path of the uri system general set task.
+role_common_task_uri_system_general_set: "{{ role_common_task_uri_system_general }}/set.yml"
+
 # The path of the uri system general get settings task.
 role_common_task_uri_system_general_settings: "{{ role_common_task_uri_system_general }}/settings.yml"
 

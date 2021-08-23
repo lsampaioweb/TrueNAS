@@ -11,3 +11,6 @@ privatekey_path : "/opt/certificates/nas.aprendendo.com.br/nas.aprendendo.com.br
 
 # The id of the certificate in the MacOSX keychain.
 certificate_password_id : "ssl.nas.aprendendo.com.br"
+
+# The list of ips that will be used to connect to the web admin interface.
+ui_address: ["0.0.0.0"]

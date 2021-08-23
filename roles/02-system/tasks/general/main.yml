@@ -1,0 +1,30 @@
+---
+- name: Including the file that contains specific settings
+  include_vars: "host_vars/{{ host }}.yml"
+
+- name: Getting the current system general settings
+  include_tasks: "{{ role_common_task_uri_system_general_settings }}"
+
+- name: Reading the json file that contains the desired values
+  set_fact:
+    desired_values: "{{ lookup('template', 'general/config.json') }}"
+
+- name: Creating the dict that will contain the elements that are different (current vs desired)
+  set_fact:
+    different_elements: {}
+
+- name: Comparing the desired values with the current values
+  set_fact:
+    different_elements: "{{ (current != desired) | ternary(different_elements | combine ({ item.key : item.value }), different_elements) }}"
+  vars:
+    current: "{{ response.json['%s' | format(item.key)] }}"
+    desired: "{{ item.value }}"
+  loop: "{{ desired_values | dict2items }}"
+  loop_control:
+    label: "{{ item.key }}"
+  
+- name: Setting the system general settings
+  include_tasks: "{{ role_common_task_uri_system_general_set }}"
+  vars:
+    body: "{{ different_elements }}"
+  when: different_elements | length > 0
