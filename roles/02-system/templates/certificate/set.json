@@ -1,0 +1,3 @@
+{
+  "ui_certificate": "{{ certificate_id }}"
+}

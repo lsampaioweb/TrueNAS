@@ -1,0 +1,6 @@
+---
+- name: Setting the TrueNAS certificate as the default one
+  include_tasks: "{{ role_common_task_web_put }}"
+  vars:
+    url: "{{ url_system_general }}"
+    body: "{{ lookup('template', 'certificate/set.json') }}"

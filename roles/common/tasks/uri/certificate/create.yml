@@ -1,0 +1,6 @@
+---
+- name: Uploading the certificate 
+  include_tasks: "{{ role_common_task_web_post }}"
+  vars:
+    url: "{{ url_certificate }}"
+    body: "{{ lookup('template', 'certificate/create.json') }}"

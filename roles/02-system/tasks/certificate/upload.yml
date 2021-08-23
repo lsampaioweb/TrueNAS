@@ -1,0 +1,12 @@
+---
+- name: Uploading the certificate  
+  include_tasks: "{{ role_common_task_uri_certificate_create }}"
+  vars:
+    name: "{{ certificate_name }}"
+    
+    password_id : "{{ certificate_password_id }}"
+    passphrase: "{{ lookup('template', '{{ role_common_task_password_get }}') }}"
+    
+    certificate: "{{ lookup('file', '{{ certificate_path }}') | to_json }}"
+    privatekey : "{{ lookup('file', '{{ privatekey_path }}') | to_json }}"
+  when: found_certificate | length == 0

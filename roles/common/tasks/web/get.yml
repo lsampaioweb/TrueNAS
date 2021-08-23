@@ -10,3 +10,6 @@
       Content-Type: "{{ Content_Type | default('application/json') }}"
       Authorization: "Bearer {{ api_key }}"
   register: "response"
+  until: "until | default(omit)"
+  delay: "{{ delay | default(omit) }}"
+  retries: "{{ retries | default(omit) }}"

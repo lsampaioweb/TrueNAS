@@ -1,3 +1,13 @@
 ---
 # The base url of the TrueNAS server.
 base_url: "{{ http_protocol }}truenas01.aprendendo.com.br"
+
+# The name of the SSL certificate. Each server has it's own certificate.
+certificate_name: "truenas01"
+
+# The path where all the certificates are stored.
+certificate_path: "/opt/certificates/nas.aprendendo.com.br/nas.aprendendo.com.br.crt"
+privatekey_path : "/opt/certificates/nas.aprendendo.com.br/nas.aprendendo.com.br.key"
+
+# The id of the certificate in the MacOSX keychain.
+certificate_password_id : "ssl.nas.aprendendo.com.br"
