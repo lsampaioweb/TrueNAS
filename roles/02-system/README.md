@@ -12,7 +12,10 @@ Run the command in the terminal:
   1. Set the new certificate as the current one.
   1. Restart the HTTP server.
 
-## 2. XXX:
+## 2. Setup the system general settings:
+  1. Setup the general settings with the default values.
+
+## 3. Setup the mail settings:
   1. XXX.
 
 # Created by: 

@@ -1,0 +1,4 @@
+---
+- name: Reading the json file that contains the desired settings
+  set_fact:
+    desired_settings: "{{ lookup('template', 'general/config.json') }}"

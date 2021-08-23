@@ -1,0 +1,14 @@
+---
+- name: Creating the dict that will contain the elements that are different (current vs desired)
+  set_fact:
+    different_settings: {}
+
+- name: Comparing the desired and current settings
+  set_fact:
+    different_settings: "{{ (current != desired) | ternary(different_settings | combine ({ item.key : item.value }), different_settings) }}"
+  vars:
+    current: "{{ response.json['%s' | format(item.key)] }}"
+    desired: "{{ item.value }}"
+  loop: "{{ desired_settings | dict2items }}"
+  loop_control:
+    label: "{{ item.key }}"

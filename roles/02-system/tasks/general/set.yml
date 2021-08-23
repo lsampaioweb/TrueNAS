@@ -1,0 +1,5 @@
+---
+- name: Setting the system general settings
+  include_tasks: "{{ role_common_task_uri_system_general_set }}"
+  vars:
+    body: "{{ different_settings }}"

@@ -2,11 +2,13 @@
 - name: Including the file that contains specific settings
   include_vars: "host_vars/{{ host }}.yml"
 
-- name: Uploading the SSL Certificate
-  import_tasks: "certificate/main.yml"
-  vars:
-    http_protocol: "http://"
+# - name: Uploading the SSL Certificate
+#   import_tasks: "certificate/main.yml"
+#   vars:
+#     http_protocol: "http://"
 
-- name: Setting the general settings
-  import_tasks: "general/main.yml"
+# - name: Setting the general settings
+#   import_tasks: "general/main.yml"
 
+- name: Setting the mail settings
+  import_tasks: "mail/main.yml"
