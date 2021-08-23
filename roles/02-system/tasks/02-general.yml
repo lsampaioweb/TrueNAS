@@ -1,0 +1,18 @@
+---
+- name: Including the file that contains specific settings
+  include_vars: "host_vars/{{ host }}.yml"
+
+- name: Getting the list of services 
+  include_tasks: "{{ role_common_task_web_get }}"
+  vars:
+    url: "{{ api_url }}/system/general"
+
+- name: Printing the json
+  debug:
+    var: "response.json"
+
+- name: Enabling the {{ service.display_name }} service to start on boot
+  include_tasks: "{{ role_common_task_web_put }}"
+  vars:
+    url: "{{ api_url }}/service/id/{{ json.id }}"
+    body: "{{ lookup('template', 'service/enable.json') }}"

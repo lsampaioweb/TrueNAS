@@ -1,8 +1,8 @@
-# Setup XXX 
+# Setup the system's preferences
 
 Run the command in the terminal:
 ```bash
-  ansible-playbook 03-system.yml
+  ansible-playbook 02-system.yml
 ```
 
 # Tasks:

@@ -1,0 +1,15 @@
+---
+- name: Setting the TrueNAS certificate as the default one
+  include_tasks: "{{ role_common_task_system_general_certificate }}"
+  vars:
+    certificate_id: "{{ found_certificate[0].id }}"
+
+- name: Restarting the HTTP server to use latest UI settings
+  include_tasks: "{{ role_common_task_system_general_ui_restart }}"
+
+- name: Pausing the play until a URL is reachable for this host
+  include_tasks: "{{ role_common_task_system_general_settings }}"
+  vars:  
+    until: "response.status == 200"
+    delay: 1
+    retries: 5

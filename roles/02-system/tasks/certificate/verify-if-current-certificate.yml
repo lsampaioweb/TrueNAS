@@ -1,0 +1,9 @@
+---
+- name: Getting the current system general settings
+  include_tasks: "{{ role_common_task_system_general_settings }}"
+
+- name: Verifying if the TrueNAS certificate is the current used certificate
+  set_fact:
+    is_current_certificate: "{{ response.json | json_query(querystr) }}"
+  vars:
+    querystr: "ui_certificate.name=='{{ certificate_name }}'"

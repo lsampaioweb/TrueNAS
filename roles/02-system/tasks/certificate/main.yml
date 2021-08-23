@@ -1,0 +1,22 @@
+---
+- name: Including the file that contains specific settings
+  include_vars: "host_vars/{{ host }}.yml"
+
+- name: Verifying if the TrueNAS certificate was already uploaded
+  include_tasks: "verify.yml"
+
+- name: Uploading the certificate 
+  include_tasks: "upload.yml"
+  when: found_certificate | length == 0
+
+- name: Verifying again if the TrueNAS certificate was already uploaded
+  include_tasks: "verify.yml"
+  when: found_certificate | length == 0
+
+- name: Verifying if the TrueNAS certificate is the current used certificate
+  include_tasks: "verify-if-current-certificate.yml"
+  when: found_certificate | length > 0
+
+- name: Setting the TrueNAS certificate as the default one
+  include_tasks: "set.yml"
+  when: (found_certificate | length > 0) and (not is_current_certificate | bool)

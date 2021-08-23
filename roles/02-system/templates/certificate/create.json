@@ -1,0 +1,7 @@
+{
+  "create_type": "CERTIFICATE_CREATE_IMPORTED",
+  "name": "{{ name }}",
+  "passphrase": "{{ passphrase }}",
+  "certificate": {{ certificate }},
+  "privatekey": {{ privatekey }}
+}

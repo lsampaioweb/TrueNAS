@@ -1,0 +1,6 @@
+---
+- name: Restarting the HTTP server
+  include_tasks: "{{ role_common_task_web_post }}"
+  vars:
+    url: "{{ url_system_general_ui_restart }}"
+    body_format: "raw"
