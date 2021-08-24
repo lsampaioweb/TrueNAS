@@ -6,6 +6,8 @@
     url: "{{ url }}"
     return_content: "{{ return_content | default('yes') }}"
     status_code: "{{ status_code | default(omit) }}"
+    validate_certs: "{{ validate_certs | default(omit) }}"
+    follow_redirects: "{{ follow_redirects | default(omit) }}"
     body_format: "{{ body_format | default('json') }}"
     body: "{{ body | default(omit) }}"
     headers:

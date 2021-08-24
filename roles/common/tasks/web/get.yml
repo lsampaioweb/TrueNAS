@@ -6,6 +6,8 @@
     url: "{{ url }}"
     return_content: "{{ return_content | default(omit) }}"
     status_code: "{{ status_code | default(omit) }}"
+    validate_certs: "{{ validate_certs | default(omit) }}"
+    follow_redirects: "{{ follow_redirects | default(omit) }}"
     headers:
       Content-Type: "{{ Content_Type | default('application/json') }}"
       Authorization: "Bearer {{ api_key }}"

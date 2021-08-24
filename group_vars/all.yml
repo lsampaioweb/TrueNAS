@@ -14,6 +14,24 @@ api_key_id: "truenas-api-key"
 # The password of the root user used in TrueNAS.
 api_key: "{{ lookup('pipe', 'security find-generic-password -a $USER -s {{ api_key_id }} -w') }}"
 
+# The user account Email address to use for the envelope From email address.
+mail_fromemail: "root@truenas.local"
+
+# Enable SMTP AUTH using PLAIN SASL. Requires a valid Username and Password.
+mail_smtp: true
+
+# Hostname or IP address of SMTP server to use for sending this email.
+mail_outgoingserver: "smtp.gmail.com"
+
+# SMTP port number. Typically 25,465 (secure SMTP), or 587 (submission).
+mail_port: 587
+
+# Email encryption type. Choices are Plain (No Encryption), SSL (Implicit TLS), or TLS (STARTTLS).
+mail_security: "TLS"
+
+# Enter the username if the SMTP server requires authentication.
+mail_user: "lsampaioweb@gmail.com"
+
 # The protocol that will be used. Can be HTTP or HTTPS.
 http_protocol: "https://"
 
@@ -47,15 +65,6 @@ role_common_task_password_get: "{{ role_common_task_passwords }}/get.j2"
 # The path of the uri certificate folder.
 role_common_task_uri: "{{ role_common_task }}/uri"
 
-# The path of the uri certificate folder.
-role_common_task_uri_certificate: "{{ role_common_task_uri }}/certificate"
-
-# The path of the uri certificate get task.
-role_common_task_uri_certificate_get: "{{ role_common_task_uri_certificate }}/get.yml"
-
-# The path of the uri certificate get task.
-role_common_task_uri_certificate_create: "{{ role_common_task_uri_certificate }}/create.yml"
-
 # The path of the uri service folder.
 role_common_task_uri_service: "{{ role_common_task_uri }}/service"
 
@@ -71,20 +80,38 @@ role_common_task_uri_service_start: "{{ role_common_task_uri_service }}/start.ym
 # The path of the uri system folder.
 role_common_task_uri_system: "{{ role_common_task_uri }}/system"
 
+# The path of the uri certificate folder.
+role_common_task_uri_system_certificate: "{{ role_common_task_uri_system }}/certificate"
+
+# The path of the uri certificate create task.
+role_common_task_uri_system_certificate_create: "{{ role_common_task_uri_system_certificate }}/create.yml"
+
+# The path of the uri certificate get task.
+role_common_task_uri_system_certificate_get: "{{ role_common_task_uri_system_certificate }}/get.yml"
+
+# The path of the uri certificate set task.
+role_common_task_uri_system_certificate_set: "{{ role_common_task_uri_system_certificate }}/set.yml"
+
 # The path of the uri system general folder.
 role_common_task_uri_system_general: "{{ role_common_task_uri_system }}/general"
 
-# The path of the uri system general certificate task.
-role_common_task_uri_system_general_certificate: "{{ role_common_task_uri_system_general }}/certificate.yml"
+# The path of the uri system general get settings task.
+role_common_task_uri_system_general_get: "{{ role_common_task_uri_system_general }}/get.yml"
 
 # The path of the uri system general set task.
 role_common_task_uri_system_general_set: "{{ role_common_task_uri_system_general }}/set.yml"
 
-# The path of the uri system general get settings task.
-role_common_task_uri_system_general_settings: "{{ role_common_task_uri_system_general }}/settings.yml"
-
 # The path of the uri system general ui restart task.
 role_common_task_uri_system_general_ui_restart: "{{ role_common_task_uri_system_general }}/ui-restart.yml"
+
+# The path of the uri system mail folder.
+role_common_task_uri_system_mail: "{{ role_common_task_uri_system }}/mail"
+
+# The path of the uri system mail get task.
+role_common_task_uri_system_mail_get: "{{ role_common_task_uri_system_mail }}/get.yml"
+
+# The path of the uri system mail set task.
+role_common_task_uri_system_mail_set: "{{ role_common_task_uri_system_mail }}/set.yml"
 
 # The path of the web folder.
 role_common_task_web: "{{ role_common_task }}/web"
@@ -106,6 +133,9 @@ url_system_general: "{{ url_system }}/general"
 
 # The url of the system general ui_restart page
 url_system_general_ui_restart: "{{ url_system_general }}/ui_restart"
+
+# The url of the mail page
+url_mail: "{{ api_url }}/mail"
 
 # The url of the certificate page
 url_certificate: "{{ api_url }}/certificate"

@@ -1,6 +1,6 @@
 ---
 - name: Getting the list of registered certificates  
-  include_tasks: "{{ role_common_task_uri_certificate_get }}"
+  include_tasks: "{{ role_common_task_uri_system_certificate_get }}"
 
 - name: Verifying if the TrueNAS certificate was already uploaded
   set_fact:

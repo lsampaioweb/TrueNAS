@@ -1,0 +1,5 @@
+---
+- name: Setting the mail settings
+  include_tasks: "{{ role_common_task_uri_system_mail_set }}"
+  vars:
+    body: "{{ different_settings }}"

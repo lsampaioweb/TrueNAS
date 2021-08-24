@@ -1,6 +1,6 @@
 ---
 - name: Uploading the certificate  
-  include_tasks: "{{ role_common_task_uri_certificate_create }}"
+  include_tasks: "{{ role_common_task_uri_system_certificate_create }}"
   vars:
     name: "{{ certificate_name }}"
     

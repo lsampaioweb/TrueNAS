@@ -16,7 +16,7 @@ Run the command in the terminal:
   1. Setup the general settings with the default values.
 
 ## 3. Setup the mail settings:
-  1. XXX.
+  1. Setup the mail settings with the default values.
 
 # Created by: 
 
