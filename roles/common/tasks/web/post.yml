@@ -13,3 +13,4 @@
     headers:
       Authorization: "Bearer {{ api_key }}"
   register: "response"
+  changed_when: (status_code is defined) | ternary(response.status in (status_code | default([])), (response.status == 200 or false))
