@@ -6,7 +6,7 @@
   include_tasks: "get-current-settings.yml"
 
 - name: Comparing the desired and current settings
-  include_tasks: "compare-settings.yml"
+  include_tasks: "../common/compare-settings.yml"
   
 - name: Setting the system general settings
   include_tasks: "set.yml"
