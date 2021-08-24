@@ -1,0 +1,18 @@
+{
+  "hostname": "{{ network_hostname }}",
+  "domain": "{{ network_domain }}",
+  "domains": {{ network_domains }},
+  "ipv4gateway": "{{ network_ipv4gateway }}",
+  "ipv6gateway": "{{ network_ipv6gateway }}",
+  "nameserver1": "{{ network_nameserver1 }}",
+  "nameserver2": "{{ network_nameserver2 }}",
+  "nameserver3": "{{ network_nameserver3 }}",
+  "httpproxy": "{{ network_httpproxy }}",
+  "netwait_enabled": {{ network_netwait_enabled }},
+  "hosts": "{{ network_hosts }}",
+  "service_announcement": {
+    "netbios": {{ network_service_announcement.netbios }},
+    "mdns": {{ network_service_announcement.mdns }},
+    "wsd": {{ network_service_announcement.wsd }}
+  }
+}

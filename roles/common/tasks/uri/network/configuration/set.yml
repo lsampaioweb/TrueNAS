@@ -1,0 +1,5 @@
+---
+- name: Setting the network settings
+  include_tasks: "{{ role_common_task_web_put }}"
+  vars:
+    url: "{{ url_network_configuration }}"

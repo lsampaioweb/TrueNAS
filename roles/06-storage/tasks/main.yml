@@ -1,0 +1,6 @@
+---
+- name: Including the file that contains specific settings
+  include_vars: "host_vars/{{ host }}.yml"
+
+- name: Setting up the storage pools
+  import_tasks: "pools/main.yml"

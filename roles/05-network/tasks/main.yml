@@ -1,0 +1,9 @@
+---
+- name: Including the file that contains specific settings
+  include_vars: "host_vars/{{ host }}.yml"
+
+- name: Setting up the network global configuration
+  import_tasks: "configuration/main.yml"
+
+# - name: Setting up the interface
+#   import_tasks: "interface/main.yml"

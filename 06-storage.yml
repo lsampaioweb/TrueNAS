@@ -1,0 +1,11 @@
+---
+- name: Setting up the storage pools
+  hosts: "ControlMachine"
+  
+  tasks:
+    - name: Calling the role that contains all the necessary tasks
+      include_role:
+        name: 06-storage
+      loop: "{{ groups['TrueNAS'] }}"
+      loop_control:
+        loop_var: host

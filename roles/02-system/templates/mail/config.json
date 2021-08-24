@@ -1,11 +1,11 @@
 {
   "fromemail": "{{ mail_fromemail }}",
   "fromname": "{{ mail_fromname }}",
-  "smtp": "{{ mail_smtp }}",
+  "smtp": {{ mail_smtp }},
   "outgoingserver": "{{ mail_outgoingserver }}",
   "port": "{{ mail_port }}",
   "security": "{{ mail_security }}",
   "user": "{{ mail_user }}",
   "pass": "{{ mail_pass }}",
   "oauth": {}
- }
+}

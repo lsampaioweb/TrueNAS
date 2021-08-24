@@ -1,0 +1,13 @@
+---
+- name: Reading the json file that contains the desired settings
+  include_tasks: "get-desired-settings.yml"
+
+# - name: Getting the current mail settings
+#   include_tasks: "get-current-settings.yml"
+
+# - name: Comparing the desired and current settings
+#   include_tasks: "../common/compare-settings.yml"
+
+# - name: Setting the mail settings
+#   include_tasks: "set.yml"
+#   when: different_settings | length > 0

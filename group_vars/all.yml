@@ -32,6 +32,50 @@ mail_security: "TLS"
 # Enter the username if the SMTP server requires authentication.
 mail_user: "lsampaioweb@gmail.com"
 
+# System domain name, like example.com
+network_domain: "local"
+
+# Primary DNS server.
+network_nameserver1: "192.168.0.2"
+
+# Secondary DNS server.
+network_nameserver2: ""
+
+# Third DNS server.
+network_nameserver3: ""
+
+# Enter an IPv4 address. This overrides the default gateway provided by DHCP.
+network_ipv4gateway: "192.168.0.2"
+
+# Enter an IPv6 address. This overrides the default gateway provided by DHCP.
+network_ipv6gateway: ""
+
+# When using a proxy
+network_httpproxy: ""
+
+# Delays the start of network services until pings are returned from the IP addresses added to the Netwait IP List.
+network_netwait_enabled: false
+
+# Enter a list of IP addresses to ping. Each address is tried until one is successful or the list is exhausted. Leave empty to use the default gateway.
+# network_netwait_ip: []
+
+# ???
+network_hosts: ""
+
+# Additional domains to search.
+network_domains: []
+
+network_service_announcement: {
+  # Legacy NetBIOS name server. Advertises the SMB service NetBIOS Name. Can be required for legacy SMB1 clients to discover the server. When advertised, the server appears in Network Neighborhood).
+  netbios: false,
+
+  # Multicast DNS. Uses the system Hostname to advertise enabled and running services. For example, this controls if the server appears under Network on MacOS clients.
+  mdns: true,
+
+  # Uses the SMB Service NetBIOS Name to advertise the server to WS-Discovery clients. This causes the computer appear in the Network Neighborhood of modern Windows OSes.
+  wsd: true
+}
+
 # The protocol that will be used. Can be HTTP or HTTPS.
 http_protocol: "https://"
 
@@ -64,6 +108,18 @@ role_common_task_password_get: "{{ role_common_task_passwords }}/get.j2"
 
 # The path of the uri certificate folder.
 role_common_task_uri: "{{ role_common_task }}/uri"
+
+# The path of the uri network folder.
+role_common_task_uri_network: "{{ role_common_task_uri }}/network"
+
+# The path of the uri network configuration folder.
+role_common_task_uri_network_configuration: "{{ role_common_task_uri_network }}/configuration"
+
+# The path of the uri network configuration get task.
+role_common_task_uri_network_configuration_get: "{{ role_common_task_uri_network_configuration }}/get.yml"
+
+# The path of the uri network configuration set task.
+role_common_task_uri_network_configuration_set: "{{ role_common_task_uri_network_configuration }}/set.yml"
 
 # The path of the uri service folder.
 role_common_task_uri_service: "{{ role_common_task_uri }}/service"
@@ -125,6 +181,21 @@ role_common_task_web_post: "{{ role_common_task_web }}/post.yml"
 # The path of the web put task.
 role_common_task_web_put: "{{ role_common_task_web }}/put.yml"
 
+# The url of the network page
+url_network: "{{ api_url }}/network"
+
+# The url of the network configuration page
+url_network_configuration: "{{ url_network }}/configuration"
+
+# The url of the service page
+url_service: "{{ api_url }}/service"
+
+# The url of the service enable page
+url_service_enable: "{{ url_service }}/id"
+
+# The url of the service start page
+url_service_start: "{{ url_service }}/start"
+
 # The url of the system page
 url_system: "{{ api_url }}/system"
 
@@ -139,15 +210,6 @@ url_mail: "{{ api_url }}/mail"
 
 # The url of the certificate page
 url_certificate: "{{ api_url }}/certificate"
-
-# The url of the service page
-url_service: "{{ api_url }}/service"
-
-# The url of the service enable page
-url_service_enable: "{{ url_service }}/id"
-
-# The url of the service start page
-url_service_start: "{{ url_service }}/start"
 
 # The url of the nfs page
 url_nfs: "{{ api_url }}/nfs"
