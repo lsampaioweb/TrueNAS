@@ -1,0 +1,5 @@
+---
+- name: Setting the new settings
+  include_tasks: "{{ task_file }}"
+  vars:
+    body: "{{ different_elements }}"

@@ -112,6 +112,15 @@ role_common_task_shared: "{{ role_common_task }}/shared"
 # The path of the shared compare dict vs json task.
 role_common_task_shared_compare_dict_json: "{{ role_common_task_shared }}/compare-dict-json.yml"
 
+# The path of the shared get current settings task.
+role_common_task_shared_get_current_settings: "{{ role_common_task_shared }}/get-current-settings.yml"
+
+# The path of the shared get desired settings task.
+role_common_task_shared_get_desired_settings: "{{ role_common_task_shared }}/get-desired-settings.yml"
+
+# The path of the shared set settings task.
+role_common_task_shared_set_settings: "{{ role_common_task_shared }}/set-settings.yml"
+
 # The path of the uri certificate folder.
 role_common_task_uri: "{{ role_common_task }}/uri"
 

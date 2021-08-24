@@ -1,0 +1,10 @@
+- name: debug
+  debug:
+    msg: 
+    - "{{ desired_settings }}"
+    - "{{ response.json }}"
+
+- name: Copy using inline content
+  copy:
+    content: "{{ desired_settings }}"
+    dest: "teste.txt"

@@ -1,16 +1,22 @@
 ---
 - name: Reading the json file that contains the desired settings
-  include_tasks: "get-desired-settings.yml"
+  include_tasks: "{{ role_common_task_shared_get_desired_settings }}"
+  vars:
+    template_file: "configuration/config.json"
 
-- name: Getting the current mail settings
-  include_tasks: "get-current-settings.yml"
+- name: Getting the current network settings
+  include_tasks: "{{ role_common_task_shared_get_current_settings }}"
+  vars:
+    task_file: "{{ role_common_task_uri_network_configuration_get }}"
 
 - name: Comparing the desired and current settings
   include_tasks: "{{ role_common_task_shared_compare_dict_json }}"
   vars:
     dict: "{{ desired_settings }}"
-    json: "{{ response.json }}"  
-
-- name: Setting the mail settings
-  include_tasks: "set.yml"
+    json: "{{ response.json }}"
+  
+- name: Setting the network settings
+  include_tasks: "{{ role_common_task_shared_set_settings }}"
+  vars:
+    task_file: "{{ role_common_task_uri_network_configuration_set }}"
   when: different_elements | length > 0
