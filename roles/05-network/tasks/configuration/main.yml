@@ -6,8 +6,11 @@
   include_tasks: "get-current-settings.yml"
 
 - name: Comparing the desired and current settings
-  include_tasks: "compare-settings.yml"
+  include_tasks: "{{ role_common_task_shared_compare_dict_json }}"
+  vars:
+    dict: "{{ desired_settings }}"
+    json: "{{ response.json }}"  
 
 - name: Setting the mail settings
   include_tasks: "set.yml"
-  when: different_settings | length > 0
+  when: different_elements | length > 0

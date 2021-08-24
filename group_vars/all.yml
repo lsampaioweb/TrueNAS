@@ -106,6 +106,12 @@ role_common_task_password_add: "{{ role_common_task_passwords }}/add.yml"
 # The path of the password get task.
 role_common_task_password_get: "{{ role_common_task_passwords }}/get.j2"
 
+# The path of the shared folder.
+role_common_task_shared: "{{ role_common_task }}/shared"
+
+# The path of the shared compare dict vs json task.
+role_common_task_shared_compare_dict_json: "{{ role_common_task_shared }}/compare-dict-json.yml"
+
 # The path of the uri certificate folder.
 role_common_task_uri: "{{ role_common_task }}/uri"
 
