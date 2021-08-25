@@ -17,68 +17,6 @@ api_key_id: "truenas-api-key"
 # The password of the root user used in TrueNAS.
 api_key: "{{ lookup('pipe', 'security find-generic-password -a $USER -s {{ api_key_id }} -w') }}"
 
-# The user account Email address to use for the envelope From email address.
-mail_fromemail: "root@truenas.local"
-
-# Enable SMTP AUTH using PLAIN SASL. Requires a valid Username and Password.
-mail_smtp: true
-
-# Hostname or IP address of SMTP server to use for sending this email.
-mail_outgoingserver: "smtp.gmail.com"
-
-# SMTP port number. Typically 25,465 (secure SMTP), or 587 (submission).
-mail_port: 587
-
-# Email encryption type. Choices are Plain (No Encryption), SSL (Implicit TLS), or TLS (STARTTLS).
-mail_security: "TLS"
-
-# Enter the username if the SMTP server requires authentication.
-mail_user: "lsampaioweb@gmail.com"
-
-# System domain name, like example.com
-network_domain: "local"
-
-# Primary DNS server.
-network_nameserver1: "192.168.0.2"
-
-# Secondary DNS server.
-network_nameserver2: ""
-
-# Third DNS server.
-network_nameserver3: ""
-
-# Enter an IPv4 address. This overrides the default gateway provided by DHCP.
-network_ipv4gateway: "192.168.0.2"
-
-# Enter an IPv6 address. This overrides the default gateway provided by DHCP.
-network_ipv6gateway: ""
-
-# When using a proxy
-network_httpproxy: ""
-
-# Delays the start of network services until pings are returned from the IP addresses added to the Netwait IP List.
-network_netwait_enabled: false
-
-# Enter a list of IP addresses to ping. Each address is tried until one is successful or the list is exhausted. Leave empty to use the default gateway.
-# network_netwait_ip: []
-
-# ???
-network_hosts: ""
-
-# Additional domains to search.
-network_domains: []
-
-network_service_announcement: {
-  # Legacy NetBIOS name server. Advertises the SMB service NetBIOS Name. Can be required for legacy SMB1 clients to discover the server. When advertised, the server appears in Network Neighborhood).
-  netbios: false,
-
-  # Multicast DNS. Uses the system Hostname to advertise enabled and running services. For example, this controls if the server appears under Network on MacOS clients.
-  mdns: true,
-
-  # Uses the SMB Service NetBIOS Name to advertise the server to WS-Discovery clients. This causes the computer appear in the Network Neighborhood of modern Windows OSes.
-  wsd: true
-}
-
 # The protocol that will be used. Can be HTTP or HTTPS.
 http_protocol: "https://"
 

@@ -1,11 +1,11 @@
 {
-  "fromemail": "{{ mail_fromemail }}",
+  "fromemail": "root@truenas.local",
   "fromname": "{{ mail_fromname }}",
-  "smtp": {{ mail_smtp }},
-  "outgoingserver": "{{ mail_outgoingserver }}",
-  "port": "{{ mail_port }}",
-  "security": "{{ mail_security }}",
-  "user": "{{ mail_user }}",
+  "smtp": true,
+  "outgoingserver": "smtp.gmail.com",
+  "port": 587,
+  "security": "TLS",
+  "user": "lsampaioweb@gmail.com",
   "pass": "{{ mail_pass }}",
   "oauth": {}
 }

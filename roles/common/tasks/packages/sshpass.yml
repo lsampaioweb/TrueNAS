@@ -22,7 +22,7 @@
   when: should_install_sshpass
 
 - name: Compiling and installing
-  shell: "{{ item }}"
+  command: "{{ item }}"
   args:
     chdir: "{{ sshpass.folder_name }}"
   loop:

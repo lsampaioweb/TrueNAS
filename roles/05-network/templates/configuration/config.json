@@ -1,18 +1,18 @@
 {
   "hostname": "{{ network_hostname }}",
-  "domain": "{{ network_domain }}",
-  "domains": {{ network_domains }},
-  "ipv4gateway": "{{ network_ipv4gateway }}",
-  "ipv6gateway": "{{ network_ipv6gateway }}",
-  "nameserver1": "{{ network_nameserver1 }}",
-  "nameserver2": "{{ network_nameserver2 }}",
-  "nameserver3": "{{ network_nameserver3 }}",
-  "httpproxy": "{{ network_httpproxy }}",
-  "netwait_enabled": {{ network_netwait_enabled }},
-  "hosts": "{{ network_hosts }}",
+  "domain": "local",
+  "domains": [],
+  "ipv4gateway": "192.168.0.2",
+  "ipv6gateway": "",
+  "nameserver1": "192.168.0.2",
+  "nameserver2": "",
+  "nameserver3": "",
+  "httpproxy": "",
+  "netwait_enabled": false,
+  "hosts": "",
   "service_announcement": {
-    "netbios": {{ network_service_announcement.netbios }},
-    "mdns": {{ network_service_announcement.mdns }},
-    "wsd": {{ network_service_announcement.wsd }}
+    "netbios": false,
+    "mdns": true,
+    "wsd": true
   }
 }
