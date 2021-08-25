@@ -1,0 +1,5 @@
+---
+- name: Setting the NFS share settings
+  include_tasks: "{{ role_common_task_web_put }}"
+  vars:
+    url: "{{ url_sharing_nfs_update }}"

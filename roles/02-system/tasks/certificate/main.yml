@@ -15,5 +15,5 @@
   when: found_certificate | length > 0
 
 - name: Setting the TrueNAS certificate as the default one
-  include_tasks: "set.yml"
+  include_tasks: "update.yml"
   when: (found_certificate | length > 0) and (not is_current_certificate | bool)

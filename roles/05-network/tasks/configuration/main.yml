@@ -16,7 +16,7 @@
     json: "{{ response.json }}"
   
 - name: Setting the network settings
-  include_tasks: "{{ role_common_task_shared_set_settings }}"
+  include_tasks: "{{ role_common_task_shared_update_settings }}"
   vars:
-    task_file: "{{ role_common_task_uri_network_configuration_set }}"
+    task_file: "{{ role_common_task_uri_network_configuration_update }}"
   when: different_settings | length > 0

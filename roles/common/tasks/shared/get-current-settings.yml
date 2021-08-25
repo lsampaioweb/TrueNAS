@@ -1,3 +1,7 @@
 ---
 - name: Getting the current settings
   include_tasks: "{{ task_file }}"
+
+- name: Printing the current settings json object
+  debug:
+    msg: "{{ response.json }}"

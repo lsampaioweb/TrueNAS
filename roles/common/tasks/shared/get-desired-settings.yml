@@ -2,3 +2,7 @@
 - name: Reading the json file that contains the desired settings
   set_fact:
     desired_settings: "{{ lookup('template', '{{ template_file }}') }}"
+
+- name: Printing the desired settings json object
+  debug:
+    msg: "{{ desired_settings }}"

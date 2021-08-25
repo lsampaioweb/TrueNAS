@@ -2,4 +2,4 @@
 - name: Creating the settings for the poll
   include_tasks: "{{ role_common_task_web_post }}"
   vars:
-    url: "{{ url_pool }}"
+    url: "{{ url_storage_pool }}"

@@ -118,8 +118,8 @@ role_common_task_shared_get_current_settings: "{{ role_common_task_shared }}/get
 # The path of the shared get desired settings task.
 role_common_task_shared_get_desired_settings: "{{ role_common_task_shared }}/get-desired-settings.yml"
 
-# The path of the shared set settings task.
-role_common_task_shared_set_settings: "{{ role_common_task_shared }}/set-settings.yml"
+# The path of the shared update settings task.
+role_common_task_shared_update_settings: "{{ role_common_task_shared }}/update-settings.yml"
 
 # The path of the uri certificate folder.
 role_common_task_uri: "{{ role_common_task }}/uri"
@@ -133,8 +133,8 @@ role_common_task_uri_network_configuration: "{{ role_common_task_uri_network }}/
 # The path of the uri network configuration get task.
 role_common_task_uri_network_configuration_get: "{{ role_common_task_uri_network_configuration }}/get.yml"
 
-# The path of the uri network configuration set task.
-role_common_task_uri_network_configuration_set: "{{ role_common_task_uri_network_configuration }}/set.yml"
+# The path of the uri network configuration update task.
+role_common_task_uri_network_configuration_update: "{{ role_common_task_uri_network_configuration }}/update.yml"
 
 # The path of the uri service folder.
 role_common_task_uri_service: "{{ role_common_task_uri }}/service"
@@ -160,8 +160,8 @@ role_common_task_uri_storage_pool_create: "{{ role_common_task_uri_storage_pool 
 # The path of the uri storage pool get task.
 role_common_task_uri_storage_pool_get: "{{ role_common_task_uri_storage_pool }}/get.yml"
 
-# The path of the uri storage pool set task.
-role_common_task_uri_storage_pool_set: "{{ role_common_task_uri_storage_pool }}/set.yml"
+# The path of the uri storage pool update task.
+role_common_task_uri_storage_pool_update: "{{ role_common_task_uri_storage_pool }}/update.yml"
 
 # The path of the uri system folder.
 role_common_task_uri_system: "{{ role_common_task_uri }}/system"
@@ -172,8 +172,8 @@ role_common_task_uri_system_advanced: "{{ role_common_task_uri_system }}/advance
 # The path of the uri system advanced get settings task.
 role_common_task_uri_system_advanced_get: "{{ role_common_task_uri_system_advanced }}/get.yml"
 
-# The path of the uri system advanced set task.
-role_common_task_uri_system_advanced_set: "{{ role_common_task_uri_system_advanced }}/set.yml"
+# The path of the uri system advanced update task.
+role_common_task_uri_system_advanced_update: "{{ role_common_task_uri_system_advanced }}/update.yml"
 
 # The path of the uri certificate folder.
 role_common_task_uri_system_certificate: "{{ role_common_task_uri_system }}/certificate"
@@ -184,8 +184,8 @@ role_common_task_uri_system_certificate_create: "{{ role_common_task_uri_system_
 # The path of the uri certificate get task.
 role_common_task_uri_system_certificate_get: "{{ role_common_task_uri_system_certificate }}/get.yml"
 
-# The path of the uri certificate set task.
-role_common_task_uri_system_certificate_set: "{{ role_common_task_uri_system_certificate }}/set.yml"
+# The path of the uri certificate update task.
+role_common_task_uri_system_certificate_update: "{{ role_common_task_uri_system_certificate }}/update.yml"
 
 # The path of the uri system general folder.
 role_common_task_uri_system_general: "{{ role_common_task_uri_system }}/general"
@@ -193,8 +193,8 @@ role_common_task_uri_system_general: "{{ role_common_task_uri_system }}/general"
 # The path of the uri system general get settings task.
 role_common_task_uri_system_general_get: "{{ role_common_task_uri_system_general }}/get.yml"
 
-# The path of the uri system general set task.
-role_common_task_uri_system_general_set: "{{ role_common_task_uri_system_general }}/set.yml"
+# The path of the uri system general update task.
+role_common_task_uri_system_general_update: "{{ role_common_task_uri_system_general }}/update.yml"
 
 # The path of the uri system general ui restart task.
 role_common_task_uri_system_general_ui_restart: "{{ role_common_task_uri_system_general }}/ui-restart.yml"
@@ -205,8 +205,8 @@ role_common_task_uri_system_mail: "{{ role_common_task_uri_system }}/mail"
 # The path of the uri system mail get task.
 role_common_task_uri_system_mail_get: "{{ role_common_task_uri_system_mail }}/get.yml"
 
-# The path of the uri system mail set task.
-role_common_task_uri_system_mail_set: "{{ role_common_task_uri_system_mail }}/set.yml"
+# The path of the uri system mail update task.
+role_common_task_uri_system_mail_update: "{{ role_common_task_uri_system_mail }}/update.yml"
 
 # The path of the web folder.
 role_common_task_web: "{{ role_common_task }}/web"
@@ -226,12 +226,6 @@ url_network: "{{ api_url }}/network"
 # The url of the network configuration page
 url_network_configuration: "{{ url_network }}/configuration"
 
-# The url of the pool page
-url_pool: "{{ api_url }}/pool"
-
-# The url of the set pool page
-url_pool_set: "{{ url_pool }}/id"
-
 # The url of the service page
 url_service: "{{ api_url }}/service"
 
@@ -240,6 +234,21 @@ url_service_enable: "{{ url_service }}/id"
 
 # The url of the service start page
 url_service_start: "{{ url_service }}/start"
+
+# The url of the sharing page
+url_sharing: "{{ api_url }}/sharing"
+
+# The url of the sharing nfs page
+url_sharing_nfs: "{{ url_sharing }}/nfs"
+
+# The url of the sharing nfs set page
+url_sharing_nfs_update: "{{ url_sharing_nfs }}/id"
+
+# The url of the storage pool page
+url_storage_pool: "{{ api_url }}/pool"
+
+# The url of the storage set pool page
+url_storage_pool_update: "{{ url_storage_pool }}/id"
 
 # The url of the system page
 url_system: "{{ api_url }}/system"

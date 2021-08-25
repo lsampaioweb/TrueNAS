@@ -1,0 +1,18 @@
+{
+  "paths": [
+    "/mnt/Silver/NFS"
+  ],
+  "comment": "NFS",
+  "hosts": [],
+  "alldirs": true,
+  "ro": false,
+  "quiet": false,
+  "maproot_user": "root",
+  "maproot_group": "nogroup",
+  "mapall_user": "",
+  "mapall_group": "",
+  "security": [],
+  "enabled": true,
+  "networks": [],
+  "locked": false
+}

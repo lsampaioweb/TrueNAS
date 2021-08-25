@@ -14,9 +14,9 @@
   vars:
     dict: "{{ desired_settings }}"
     json: "{{ response.json }}"
-  
+
 - name: Setting the system advanced settings
-  include_tasks: "{{ role_common_task_shared_set_settings }}"
+  include_tasks: "{{ role_common_task_shared_update_settings }}"
   vars:
-    task_file: "{{ role_common_task_uri_system_advanced_set }}"
+    task_file: "{{ role_common_task_uri_system_advanced_update }}"
   when: different_settings | length > 0

@@ -2,4 +2,4 @@
 - name: Setting the settings for the poll
   include_tasks: "{{ role_common_task_web_put }}"
   vars:
-    url: "{{ url_pool_set }}/{{ pool_id }}"
+    url: "{{ url_storage_pool_update }}/{{ pool_id }}"

@@ -16,7 +16,7 @@
     json: "{{ response.json }}"
   
 - name: Setting the system general settings
-  include_tasks: "{{ role_common_task_shared_set_settings }}"
+  include_tasks: "{{ role_common_task_shared_update_settings }}"
   vars:
-    task_file: "{{ role_common_task_uri_system_general_set }}"
+    task_file: "{{ role_common_task_uri_system_general_update }}"
   when: different_settings | length > 0

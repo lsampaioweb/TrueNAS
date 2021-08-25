@@ -12,5 +12,5 @@
   #     json: "{{ response.json }}"
 
 # - name: Setting the mail settings
-#   include_tasks: "set.yml"
+#   include_tasks: "update.yml"
 #   when: different_settings | length > 0

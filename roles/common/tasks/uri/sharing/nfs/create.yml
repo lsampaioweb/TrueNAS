@@ -1,0 +1,5 @@
+---
+- name: Creating the NFS share
+  include_tasks: "{{ role_common_task_web_post }}"
+  vars:
+    url: "{{ url_sharing_nfs }}"

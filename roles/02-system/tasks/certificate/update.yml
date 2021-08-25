@@ -1,6 +1,6 @@
 ---
 - name: Setting the TrueNAS certificate as the default one
-  include_tasks: "{{ role_common_task_uri_system_certificate_set }}"
+  include_tasks: "{{ role_common_task_uri_system_certificate_update }}"
   vars:
     certificate_id: "{{ found_certificate[0].id }}"
 
