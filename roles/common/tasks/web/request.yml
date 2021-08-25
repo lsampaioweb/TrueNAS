@@ -1,5 +1,10 @@
 ---
-- name: Making a request to the URL '{{ url }}' using the {{ method }} method
+- name: Printing the request body object
+  debug:
+    var: "body | default(omit)"
+  when: debug | bool
+
+- name: Making a web request
   delegate_to: "{{ delegate_to | default(omit) }}"
   uri:
     method: "{{ method }}"
@@ -14,7 +19,12 @@
       Content-Type: "{{ Content_Type | default('application/json') }}"
       Authorization: "Bearer {{ api_key }}"
   register: "response"
-  changed_when: (status_code is defined) | ternary(response.status in (status_code | default([])), (response.status == 200 or false))
+  changed_when: (changed_when is defined) | ternary(changed_when, (status_code is defined) | ternary(response.status in (status_code | default([])), (response.status in [200])))
   until: "until | default(omit)"
   delay: "{{ delay | default(omit) }}"
   retries: "{{ retries | default(omit) }}"
+
+- name: Printing the current settings json object
+  debug:
+    var: "response.json"
+  when: debug | bool

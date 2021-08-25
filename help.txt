@@ -2,9 +2,19 @@
   debug:
     msg: 
     - "{{ desired_settings }}"
+    - "{{ different_settings }}"
     - "{{ response.json }}"
 
 - name: Copy using inline content
   copy:
     content: "{{ desired_settings }}"
     dest: "teste.txt"
+
+    # querystr: "topology.data[?type=='RAIDZ1']"
+    # querystr: "topology.data[].children[?disk=='ada6']"
+    # querystr: "topology.data[].children[?disk=='ada6'].{disk: disk, device: device}"
+    # querystr: "topology.data[?type=='RAIDZ1'].children[]"
+    # querystr: "topology.data[].children[?type=='DISK' && status=='ONLINE'].disk"
+    # querystr: "topology.data[?type=='RAIDZ1'].children[].{disk: disk, device: device}"
+    # querystr: "topology.data[].children[?type=='DISK' && status=='ONLINE']"
+    # querystr: "topology.data[?type=='RAIDZ1'].children[] | [?type=='DISK' && status=='ONLINE'].disk"

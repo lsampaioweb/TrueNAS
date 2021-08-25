@@ -1,5 +1,10 @@
 ---
+- name: Creating temporary variables to assign some default values
+  set_fact:
+    changed_when_temp: "{{ changed_when | default(false) }}"
+
 - name: Making a request to the URL '{{ url }}' using the GET method
   include_tasks: "{{ role_common_task_web_request }}"
   vars:
     method: "GET"
+    changed_when: "{{ changed_when_temp }}"

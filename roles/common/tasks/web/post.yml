@@ -1,6 +1,10 @@
 ---
+- name: Creating temporary variables to assign some default values
+  set_fact:
+    body_format_temp: "{{ body_format | default('json') }}"
+
 - name: Making a request to the URL '{{ url }}' using the POST method
   include_tasks: "{{ role_common_task_web_request }}"
   vars:
     method: "POST"
-    body_format: "{{ body_format | default('json') }}"
+    body_format: "{{ body_format_temp }}"
