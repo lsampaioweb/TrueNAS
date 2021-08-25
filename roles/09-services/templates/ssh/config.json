@@ -8,8 +8,6 @@
   "sftp_log_level": "",
   "tcpfwd": false,
   "tcpport": 22,
-  "weak_ciphers": [
-    "AES128-CBC"
-  ],
+  "weak_ciphers": ["AES128-CBC"],
   "options": ""
 }

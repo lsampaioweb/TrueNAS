@@ -1,12 +1,21 @@
 ---
 - name: Including the file that contains specific settings
   include_vars: "host_vars/{{ host }}.yml"
-  
-- name: Setting up the services that will be used by TrueNAS
-  include_tasks: "service.yml"
-  loop:
-    - { display_name: "SSH"         , name: "ssh" }
-    - { display_name: "S.M.A.R.T."  , name: "smartd"}
-    - { display_name: "NFS"         , name: "nfs" }
-    # - { display_name: "iSCSI"       , name: "iscsitarget" }
-  
+
+- name: Setting up the SSH service
+  include_tasks: "ssh/main.yml"
+
+- name: Setting up the S.M.A.R.T. service
+  include_tasks: "smart/main.yml"
+
+- name: Setting up the NFS service
+  include_tasks: "nfs/main.yml"
+
+- name: Setting up the iSCSI service
+  include_tasks: "iscsi/main.yml"
+
+  # loop:
+  #   - { display_name: "SSH"         , name: "ssh" }
+  #   - { display_name: "S.M.A.R.T."  , name: "smartd"}
+  #   - { display_name: "NFS"         , name: "nfs" }
+  #   - { display_name: "iSCSI"       , name: "iscsitarget" }

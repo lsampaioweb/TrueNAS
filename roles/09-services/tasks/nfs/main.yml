@@ -1,0 +1,22 @@
+---
+- name: Reading the json file that contains the desired settings
+  include_tasks: "{{ role_common_task_shared_get_desired_settings }}"
+  vars:
+    template_file: "nfs/config.json"
+
+- name: Getting the current NFS settings
+  include_tasks: "{{ role_common_task_shared_get_current_settings }}"
+  vars:
+    task_file: "{{ role_common_task_uri_service_nfs_get }}"
+
+- name: Comparing the desired and current settings
+  include_tasks: "{{ role_common_task_shared_compare_dict_json }}"
+  vars:
+    dict: "{{ desired_settings }}"
+    json: "{{ response.json }}"
+  
+- name: Setting the NFS settings
+  include_tasks: "{{ role_common_task_shared_update_settings }}"
+  vars:
+    task_file: "{{ role_common_task_uri_service_nfs_update }}"
+  when: different_settings | length > 0

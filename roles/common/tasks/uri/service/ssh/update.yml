@@ -1,0 +1,5 @@
+---
+- name: Setting the SSH settings
+  include_tasks: "{{ role_common_task_web_put }}"
+  vars:
+    url: "{{ url_service_ssh }}"

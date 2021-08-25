@@ -1,0 +1,6 @@
+{
+  "basename": "iqn.truenas01.br.com.aprendendo",
+  "isns_servers": [],
+  "pool_avail_threshold": null,
+  "alua": false
+}

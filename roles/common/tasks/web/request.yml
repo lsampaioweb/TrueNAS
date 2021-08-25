@@ -1,7 +1,7 @@
 ---
 - name: Printing the request body object
   debug:
-    var: "body | default(omit)"
+    msg: "{{ body | default('') }}"
   when: debug | bool
 
 - name: Making a web request

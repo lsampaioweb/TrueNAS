@@ -1,0 +1,5 @@
+---
+- name: Setting the NFS settings
+  include_tasks: "{{ role_common_task_web_put }}"
+  vars:
+    url: "{{ url_service_nfs }}"
