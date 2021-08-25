@@ -4,5 +4,5 @@
 
 - name: Printing the current settings json object
   debug:
-    msg: "{{ response.json }}"
+    var: "response.json"
   when: debug | bool

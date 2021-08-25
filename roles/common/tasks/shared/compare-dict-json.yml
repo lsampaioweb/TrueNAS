@@ -17,5 +17,5 @@
 
 - name: Printing the different settings json object
   debug:
-    msg: "{{ different_settings }}"
+    var: "different_settings"
   when: debug | bool
