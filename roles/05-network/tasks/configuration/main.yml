@@ -19,4 +19,4 @@
   include_tasks: "{{ role_common_task_shared_set_settings }}"
   vars:
     task_file: "{{ role_common_task_uri_network_configuration_set }}"
-  when: different_elements | length > 0
+  when: different_settings | length > 0

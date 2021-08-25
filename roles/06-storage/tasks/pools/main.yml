@@ -7,7 +7,7 @@
     found_pool_type_raid: ""
     found_pool_disks: ""
     new_json_object: {}
-    different_elements: {}
+    different_settings: {}
 
 - name: Reading the json file that contains the desired settings
   include_tasks: "{{ role_common_task_shared_get_desired_settings }}"
@@ -55,11 +55,11 @@
   include_tasks: "{{ role_common_task_shared_set_settings }}"
   vars:
     task_file: "{{ role_common_task_uri_storage_pool_set }}"
-  when: (different_elements | length > 0)
+  when: (different_settings | length > 0)
 
 - name: Creating the poll "{{ pool_name }}"
   include_tasks: "{{ role_common_task_shared_set_settings }}"
   vars:
     task_file: "{{ role_common_task_uri_storage_pool_create }}"
-    different_elements: "{{ desired_settings }}"
+    different_settings: "{{ desired_settings }}"
   when: (current_settings == [])

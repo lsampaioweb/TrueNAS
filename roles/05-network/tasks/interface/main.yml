@@ -13,4 +13,4 @@
 
 # - name: Setting the mail settings
 #   include_tasks: "set.yml"
-#   when: different_elements | length > 0
+#   when: different_settings | length > 0

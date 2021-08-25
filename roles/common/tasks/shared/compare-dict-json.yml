@@ -1,11 +1,11 @@
 ---
 - name: Creating the dict that will contain the elements that are different (current vs desired)
   set_fact:
-    different_elements: {}
+    different_settings: {}
 
 - name: Comparing the desired and current settings
   set_fact:
-    different_elements: "{{ (current != desired) | ternary(different_elements | combine ({ element.key : element.value }), different_elements) }}"
+    different_settings: "{{ (current != desired) | ternary(different_settings | combine ({ element.key : element.value }), different_settings) }}"
   changed_when: "(current != desired)"
   vars:
     current: "{{ json['%s' | format(element.key)] | default() }}"
