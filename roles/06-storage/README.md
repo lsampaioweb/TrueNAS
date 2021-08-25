@@ -7,9 +7,10 @@ Run the command in the terminal:
 
 # Tasks:
 
-## 1. Setup XXX:
-  1. XXX.
-  1. XXX.
+## 1. Setup the pools:
+  1. Bronze (HDD drives).
+  1. Silver (SDD drives).
+  1. Gold (NVME drives).
 
 # Created by: 
 

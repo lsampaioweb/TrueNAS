@@ -20,3 +20,30 @@ mail_fromname: "TrueNAS Server 01"
 
 # System hostname.
 network_hostname: "truenas01"
+
+# The name of the pool
+pool_bronze_name: "Bronze"
+
+# The type of the raid
+pool_bronze_type_raid: "RAIDZ1"
+
+# The list of disk for the pool
+pool_bronze_disks: ["ada5", "ada6", "ada7"]
+
+# The name of the pool
+pool_silver_name: "Silver"
+
+# The type of the raid
+pool_silver_type_raid: "RAIDZ1"
+
+# The list of disk for the pool
+pool_silver_disks: ["ada1", "ada2", "ada3", "ada4"]
+
+# The name of the pool
+pool_gold_name: "Gold"
+
+# The type of the raid
+pool_gold_type_raid: "RAIDZ1"
+
+# The list of disk for the pool
+pool_gold_disks: ["nvd0", "nvd1", "nvd2", "nvd3", "nvd4", "nvd5", "nvd6"]

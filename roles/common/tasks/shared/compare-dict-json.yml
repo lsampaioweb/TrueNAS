@@ -7,7 +7,7 @@
   set_fact:
     different_elements: "{{ (current != desired) | ternary(different_elements | combine ({ element.key : element.value }), different_elements) }}"
   vars:
-    current: "{{ json['%s' | format(element.key)] }}"
+    current: "{{ json['%s' | format(element.key)] | default() }}"
     desired: "{{ element.value }}"
   loop: "{{ dict | dict2items }}"
   loop_control:

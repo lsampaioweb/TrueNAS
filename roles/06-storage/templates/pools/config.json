@@ -1,0 +1,14 @@
+{
+  "name": "{{ pool_name }}",
+  "encryption": false,
+  "deduplication": null,
+  "checksum": null,
+  "topology": {
+    "data": [
+      {
+        "type": "{{ pool_type_raid }}", 
+        "disks": {{ pool_disks }}
+      }
+    ]
+  }
+}

@@ -148,6 +148,21 @@ role_common_task_uri_service_get: "{{ role_common_task_uri_service }}/get.yml"
 # The path of the service start task.
 role_common_task_uri_service_start: "{{ role_common_task_uri_service }}/start.yml"
 
+# The path of the uri storage folder.
+role_common_task_uri_storage: "{{ role_common_task_uri }}/storage"
+
+# The path of the uri storage pool folder.
+role_common_task_uri_storage_pool: "{{ role_common_task_uri_storage }}/pool"
+
+# The path of the uri storage pool create task.
+role_common_task_uri_storage_pool_create: "{{ role_common_task_uri_storage_pool }}/create.yml"
+
+# The path of the uri storage pool get task.
+role_common_task_uri_storage_pool_get: "{{ role_common_task_uri_storage_pool }}/get.yml"
+
+# The path of the uri storage pool set task.
+role_common_task_uri_storage_pool_set: "{{ role_common_task_uri_storage_pool }}/set.yml"
+
 # The path of the uri system folder.
 role_common_task_uri_system: "{{ role_common_task_uri }}/system"
 
@@ -201,6 +216,12 @@ url_network: "{{ api_url }}/network"
 
 # The url of the network configuration page
 url_network_configuration: "{{ url_network }}/configuration"
+
+# The url of the pool page
+url_pool: "{{ api_url }}/pool"
+
+# The url of the set pool page
+url_pool_set: "{{ url_pool }}/id"
 
 # The url of the service page
 url_service: "{{ api_url }}/service"

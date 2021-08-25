@@ -1,16 +1,65 @@
 ---
+- name: Initializing the variables that will be used on the task
+  set_fact:
+    current_settings: []
+    pool_id: ""
+    found_pool_encryption: ""
+    found_pool_type_raid: ""
+    found_pool_disks: ""
+    new_json_object: {}
+    different_elements: {}
+
 - name: Reading the json file that contains the desired settings
-  include_tasks: "get-desired-settings.yml"
+  include_tasks: "{{ role_common_task_shared_get_desired_settings }}"
+  vars:
+    template_file: "pools/config.json"
 
-# - name: Getting the current mail settings
-#   include_tasks: "get-current-settings.yml"
+- name: Getting the list of pools
+  include_tasks: "{{ role_common_task_shared_get_current_settings }}"
+  vars:
+    task_file: "{{ role_common_task_uri_storage_pool_get }}"
 
-# - name: Comparing the desired and current settings
-#   include_tasks: "{{ role_common_task_shared_compare_dict_json }}"
-  # vars:
-  #     dict: "{{ desired_settings }}"
-  #     json: "{{ response.json }}"
+- name: Searching the settings of the {{ pool_name }} pool from the list of pools
+  set_fact:
+    current_settings: "{{ response.json | json_query(querystr) | first | default([]) }}"
+  vars:
+    querystr: "[?name=='{{ pool_name }}']"
+  when: (response.json != [])
 
-# - name: Setting the mail settings
-#   include_tasks: "set.yml"
-#   when: different_elements | length > 0
+- name: Extracting the pool id, raid type and list of disks from the {{ pool_name }} pool
+  set_fact:
+    pool_id: "{{ current_settings | json_query('id') }}"
+    found_pool_encryption: "{{ current_settings | json_query('encrypt') }}"
+    found_pool_type_raid: "{{ current_settings | json_query(query_type) }}"
+    found_pool_disks: "{{ current_settings | json_query(query_disks) }}"
+  vars:
+    query_type: "topology.data[?type=='{{ pool_type_raid }}' && status=='ONLINE'].type"
+    query_disks: "topology.data[?type=='{{ pool_type_raid }}'].children[] | [?type=='DISK' && status=='ONLINE'].disk"
+  when: (current_settings != [])
+
+- name: Creating a json object with all the attributes that are expected
+  set_fact:
+    new_json_object: "{{ { 'name' : pool_name, 'encryption' : encryption, 'topology' : { 'data' : [{ 'type' : found_pool_type_raid[0], 'disks' : found_pool_disks | sort }] }} }}"
+  vars:
+    encryption: "{{ (found_pool_encryption == '0') | ternary(false, true) }}"
+  when: (current_settings != [])
+
+- name: Comparing the desired and current settings
+  include_tasks: "{{ role_common_task_shared_compare_dict_json }}"
+  vars:
+    dict: "{{ desired_settings }}"
+    json: "{{ new_json_object }}"
+  when: (new_json_object | length > 0)
+
+- name: Setting the settings for the poll "{{ pool_name }}"
+  include_tasks: "{{ role_common_task_shared_set_settings }}"
+  vars:
+    task_file: "{{ role_common_task_uri_storage_pool_set }}"
+  when: (different_elements | length > 0)
+
+- name: Creating the poll "{{ pool_name }}"
+  include_tasks: "{{ role_common_task_shared_set_settings }}"
+  vars:
+    task_file: "{{ role_common_task_uri_storage_pool_create }}"
+    different_elements: "{{ desired_settings }}"
+  when: (current_settings == [])

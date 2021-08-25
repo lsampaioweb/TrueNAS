@@ -3,4 +3,26 @@
   include_vars: "host_vars/{{ host }}.yml"
 
 - name: Setting up the storage pools
-  import_tasks: "pools/main.yml"
+  include_tasks: "pools/main.yml"
+  vars:
+    pool_name: "{{ item.pool_name }}"
+    pool_type_raid: "{{ item.pool_type_raid }}"
+    pool_disks: "{{ item.pool_disks }}"
+  loop:
+    - { 
+        pool_name: "{{ pool_bronze_name }}", 
+        pool_type_raid: "{{ pool_bronze_type_raid }}", 
+        pool_disks: "{{ pool_bronze_disks }}" 
+      }
+    - { 
+        pool_name: "{{ pool_silver_name }}", 
+        pool_type_raid: "{{ pool_silver_type_raid }}",
+        pool_disks: "{{ pool_silver_disks }}" 
+      }
+    - { 
+        pool_name: "{{ pool_gold_name }}", 
+        pool_type_raid: "{{ pool_gold_type_raid }}", 
+        pool_disks: "{{ pool_gold_disks }}" 
+      }
+  loop_control:
+    label: "{{ item.pool_name}} "
