@@ -6,3 +6,4 @@
 - name: Printing the desired settings json object
   debug:
     msg: "{{ desired_settings }}"
+  when: debug | bool
