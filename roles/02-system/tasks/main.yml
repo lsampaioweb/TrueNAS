@@ -12,6 +12,9 @@
 - name: Setting the general settings
   import_tasks: "general/main.yml"
 
+- name: Setting the advanced settings
+  import_tasks: "advanced/main.yml"
+
 - name: Setting the mail settings
   import_tasks: "mail/main.yml"
   vars:

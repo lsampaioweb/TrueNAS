@@ -166,6 +166,15 @@ role_common_task_uri_storage_pool_set: "{{ role_common_task_uri_storage_pool }}/
 # The path of the uri system folder.
 role_common_task_uri_system: "{{ role_common_task_uri }}/system"
 
+# The path of the uri system advanced folder.
+role_common_task_uri_system_advanced: "{{ role_common_task_uri_system }}/advanced"
+
+# The path of the uri system advanced get settings task.
+role_common_task_uri_system_advanced_get: "{{ role_common_task_uri_system_advanced }}/get.yml"
+
+# The path of the uri system advanced set task.
+role_common_task_uri_system_advanced_set: "{{ role_common_task_uri_system_advanced }}/set.yml"
+
 # The path of the uri certificate folder.
 role_common_task_uri_system_certificate: "{{ role_common_task_uri_system }}/certificate"
 
@@ -234,6 +243,9 @@ url_service_start: "{{ url_service }}/start"
 
 # The url of the system page
 url_system: "{{ api_url }}/system"
+
+# The url of the system advanced page
+url_system_advanced: "{{ url_system }}/advanced"
 
 # The url of the system general page
 url_system_general: "{{ url_system }}/general"
