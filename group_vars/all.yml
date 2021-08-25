@@ -223,6 +223,9 @@ role_common_task_web_post: "{{ role_common_task_web }}/post.yml"
 # The path of the web put task.
 role_common_task_web_put: "{{ role_common_task_web }}/put.yml"
 
+# The path of the web request task.
+role_common_task_web_request: "{{ role_common_task_web }}/request.yml"
+
 # The url of the network page
 url_network: "{{ api_url }}/network"
 

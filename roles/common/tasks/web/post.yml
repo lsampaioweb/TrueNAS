@@ -1,16 +1,6 @@
 ---
 - name: Making a request to the URL '{{ url }}' using the POST method
-  delegate_to: "{{ delegate_to | default(omit) }}"
-  uri:
+  include_tasks: "{{ role_common_task_web_request }}"
+  vars:
     method: "POST"
-    url: "{{ url }}"
-    return_content: "{{ return_content | default('yes') }}"
-    status_code: "{{ status_code | default(omit) }}"
-    validate_certs: "{{ validate_certs | default(omit) }}"
-    follow_redirects: "{{ follow_redirects | default(omit) }}"
     body_format: "{{ body_format | default('json') }}"
-    body: "{{ body | default(omit) }}"
-    headers:
-      Authorization: "Bearer {{ api_key }}"
-  register: "response"
-  changed_when: (status_code is defined) | ternary(response.status in (status_code | default([])), (response.status == 200 or false))
