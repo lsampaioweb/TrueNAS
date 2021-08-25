@@ -23,3 +23,4 @@
   "syslog_transport": "UDP",
   "syslog_tls_certificate": null
  }
+ 
