@@ -1,0 +1,22 @@
+---
+- name: Reading the json file that contains the desired settings
+  include_tasks: "{{ role_common_task_shared_get_desired_settings }}"
+  vars:
+    template_file: "{{ service_name }}/config.json"
+
+- name: Getting the current {{ service_display_name }} settings
+  include_tasks: "{{ role_common_task_shared_get_current_settings }}"
+  vars:
+    task_file: "{{ task_get_settings }}"
+
+- name: Comparing the desired and current settings
+  include_tasks: "{{ role_common_task_shared_compare_dict_json }}"
+  vars:
+    dict: "{{ desired_settings }}"
+    json: "{{ response.json }}"
+  
+- name: Setting the {{ service_display_name }} settings
+  include_tasks: "{{ role_common_task_shared_update_settings }}"
+  vars:
+    task_file: "{{ task_update_settings }}"
+  when: different_settings | length > 0

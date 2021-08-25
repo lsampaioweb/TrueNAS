@@ -1,22 +1,8 @@
 ---
-- name: Reading the json file that contains the desired settings
-  include_tasks: "{{ role_common_task_shared_get_desired_settings }}"
+- name: Calling the generic playbook to verify if the current and desired settings are different and if they are, update it
+  include_tasks: "{{ role_common_task_shared_get_compare_update_settings }}"
   vars:
-    template_file: "smart/config.json"
-
-- name: Getting the current S.M.A.R.T settings
-  include_tasks: "{{ role_common_task_shared_get_current_settings }}"
-  vars:
-    task_file: "{{ role_common_task_uri_service_smart_get }}"
-
-- name: Comparing the desired and current settings
-  include_tasks: "{{ role_common_task_shared_compare_dict_json }}"
-  vars:
-    dict: "{{ desired_settings }}"
-    json: "{{ response.json }}"
-  
-- name: Setting the S.M.A.R.T settings
-  include_tasks: "{{ role_common_task_shared_update_settings }}"
-  vars:
-    task_file: "{{ role_common_task_uri_service_smart_update }}"
-  when: different_settings | length > 0
+    service_display_name: "S.M.A.R.T"
+    service_name: "smart"
+    task_get_settings: "{{ role_common_task_uri_service_smart_get }}"
+    task_update_settings: "{{ role_common_task_uri_service_smart_update }}"

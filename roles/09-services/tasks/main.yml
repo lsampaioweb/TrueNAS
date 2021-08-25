@@ -3,19 +3,13 @@
   include_vars: "host_vars/{{ host }}.yml"
 
 - name: Setting up the SSH service
-  include_tasks: "ssh/main.yml"
+  import_tasks: "ssh/main.yml"
 
 - name: Setting up the S.M.A.R.T. service
-  include_tasks: "smart/main.yml"
+  import_tasks: "smart/main.yml"
 
 - name: Setting up the NFS service
-  include_tasks: "nfs/main.yml"
+  import_tasks: "nfs/main.yml"
 
 - name: Setting up the iSCSI service
-  include_tasks: "iscsi/main.yml"
-
-  # loop:
-  #   - { display_name: "SSH"         , name: "ssh" }
-  #   - { display_name: "S.M.A.R.T."  , name: "smartd"}
-  #   - { display_name: "NFS"         , name: "nfs" }
-  #   - { display_name: "iSCSI"       , name: "iscsitarget" }
+  import_tasks: "iscsi/main.yml"

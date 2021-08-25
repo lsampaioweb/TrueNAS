@@ -115,6 +115,9 @@ role_common_task_shared: "{{ role_common_task }}/shared"
 # The path of the shared compare dict vs json task.
 role_common_task_shared_compare_dict_json: "{{ role_common_task_shared }}/compare-dict-json.yml"
 
+# The path of the shared generic get compare update settings task.
+role_common_task_shared_get_compare_update_settings: "{{ role_common_task_shared }}/get-compare-update-settings.yml"
+
 # The path of the shared get current settings task.
 role_common_task_shared_get_current_settings: "{{ role_common_task_shared }}/get-current-settings.yml"
 
