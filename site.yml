@@ -1,0 +1,11 @@
+---
+- import_playbook: "01-control-machine.yml"
+- import_playbook: "02-system.yml"
+# - import_playbook: "03-accounts.yml"
+# - import_playbook: "04-tasks.yml"
+- import_playbook: "05-network.yml"
+- import_playbook: "06-storage.yml"
+# - import_playbook: "07-directory-service.yml"
+# - import_playbook: "08-sharing.yml"
+- import_playbook: "09-services.yml"
+# - import_playbook: "10-update.yml"
