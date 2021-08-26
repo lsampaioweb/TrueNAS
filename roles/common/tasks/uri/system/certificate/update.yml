@@ -3,4 +3,4 @@
   include_tasks: "{{ role_common_task_web_put }}"
   vars:
     url: "{{ url_system_general }}"
-    body: "{{ lookup('template', 'certificate/set.json') }}"
+    body: "{{ lookup('template', 'certificate/update.json') }}"
