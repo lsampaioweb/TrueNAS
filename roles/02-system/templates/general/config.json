@@ -1,5 +1,5 @@
 {
-  "ui_address": {{ ui_address }},
+  "ui_address": ["0.0.0.0"],
   "ui_v6address": ["::"],
   "ui_port": 80,
   "ui_httpsport": 443,
