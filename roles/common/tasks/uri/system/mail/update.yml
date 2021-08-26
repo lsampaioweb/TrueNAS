@@ -2,4 +2,4 @@
 - name: Setting the mail settings
   include_tasks: "{{ role_common_task_web_put }}"
   vars:
-    url: "{{ url_mail }}"
+    url: "{{ url_system_mail }}"

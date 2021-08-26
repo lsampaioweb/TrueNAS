@@ -1,0 +1,5 @@
+---
+- name: Getting the current system state
+  include_tasks: "{{ role_common_task_web_get }}"
+  vars:
+    url: "{{ url_system_state }}"

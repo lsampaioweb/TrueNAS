@@ -188,6 +188,12 @@ role_common_task_uri_system_mail_get: "{{ role_common_task_uri_system_mail }}/ge
 # The path of the uri system mail update task.
 role_common_task_uri_system_mail_update: "{{ role_common_task_uri_system_mail }}/update.yml"
 
+# The path of the uri system state folder.
+role_common_task_uri_system_state: "{{ role_common_task_uri_system }}/state"
+
+# The path of the uri system state get task.
+role_common_task_uri_system_state_get: "{{ role_common_task_uri_system_state }}/get.yml"
+
 # The path of the web folder.
 role_common_task_web: "{{ role_common_task }}/web"
 
@@ -260,8 +266,11 @@ url_system_general: "{{ url_system }}/general"
 # The url of the system general ui_restart page
 url_system_general_ui_restart: "{{ url_system_general }}/ui_restart"
 
-# The url of the mail page
-url_mail: "{{ api_url }}/mail"
+# The url of the system mail page
+url_system_mail: "{{ api_url }}/mail"
+
+# The url of the system state page
+url_system_state: "{{ url_system }}/state"
 
 # The url of the certificate page
 url_certificate: "{{ api_url }}/certificate"

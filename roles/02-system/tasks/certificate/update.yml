@@ -8,8 +8,11 @@
   include_tasks: "{{ role_common_task_uri_system_general_ui_restart }}"
 
 - name: Pausing the play until a URL is reachable for this host
-  include_tasks: "{{ role_common_task_uri_system_general_get }}"
-  vars:  
-    until: response.status == 200
+  include_tasks: "{{ role_common_task_uri_system_state_get }}"
+  vars:
+    http_protocol: "https://"
+    force: true
+    validate_certs: true
+    until: "{{ response.status == 200 }}"
     delay: 2
     retries: 5

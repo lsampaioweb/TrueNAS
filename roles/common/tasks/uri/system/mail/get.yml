@@ -2,4 +2,4 @@
 - name: Getting the current mail settings
   include_tasks: "{{ role_common_task_web_get }}"
   vars:
-    url: "{{ url_mail }}"
+    url: "{{ url_system_mail }}"

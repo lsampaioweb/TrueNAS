@@ -1,5 +1,5 @@
 ---
-- name: Calling the generic playbook to verify if the current and desired settings are different and if they are, update it
+- name: Calling the generic playbook to verify if the current and desired NFS settings are different and if they are, update it
   include_tasks: "{{ role_common_task_shared_get_compare_update_settings }}"
   vars:
     service_display_name: "NFS"

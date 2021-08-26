@@ -13,6 +13,7 @@
     status_code: "{{ status_code | default(omit) }}"
     validate_certs: "{{ validate_certs | default(omit) }}"
     follow_redirects: "{{ follow_redirects | default(omit) }}"
+    force: "{{ force | default(omit) }}"
     body_format: "{{ body_format | default(omit) }}"
     body: "{{ body | default(omit) }}"
     headers:
@@ -24,7 +25,7 @@
   delay: "{{ delay | default(omit) }}"
   retries: "{{ retries | default(omit) }}"
 
-- name: Printing the current settings json object
+- name: Printing the response object
   debug:
-    var: "response.json"
+    var: "response"
   when: debug | bool
