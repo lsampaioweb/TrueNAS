@@ -1,5 +1,5 @@
 ---
-- name: Getting the current settings for the poll
+- name: Getting the current settings for the polls
   include_tasks: "{{ role_common_task_web_get }}"
   vars:
     url: "{{ url_storage_pool }}"

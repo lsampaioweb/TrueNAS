@@ -1,0 +1,23 @@
+---
+- name: Getting the list of pools
+  include_tasks: "{{ role_common_task_shared_get_current_settings }}"
+  vars:
+    task_file: "{{ role_common_task_uri_storage_pool_get }}"
+
+- name: Searching for the settings of the {{ pool_name }} pool from the list of pools
+  set_fact:
+    current_settings: "{{ response.json | json_query(querystr) | first | default([]) }}"
+  vars:
+    querystr: "[?name=='{{ pool_name }}']"
+  when: (response.json != [])
+
+- name: Extracting the pool id, raid type and list of disks from the {{ pool_name }} pool
+  set_fact:
+    pool_id: "{{ current_settings | json_query('id') }}"
+    found_pool_encryption: "{{ current_settings | json_query('encrypt') }}"
+    found_pool_type_raid: "{{ current_settings | json_query(query_type) }}"
+    found_pool_disks: "{{ current_settings | json_query(query_disks) }}"
+  vars:
+    query_type: "topology.data[?type=='{{ pool_type_raid }}' && status=='ONLINE'].type"
+    query_disks: "topology.data[?type=='{{ pool_type_raid }}'].children[] | [?type=='DISK' && status=='ONLINE'].disk"
+  when: (current_settings != [])

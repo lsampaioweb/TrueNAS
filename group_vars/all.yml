@@ -252,7 +252,7 @@ url_sharing_nfs_update: "{{ url_sharing_nfs }}/id"
 url_storage_pool: "{{ api_url }}/pool"
 
 # The url of the storage set pool page
-url_storage_pool_update: "{{ url_storage_pool }}/id"
+url_storage_pool_by_id: "{{ url_storage_pool }}/id"
 
 # The url of the system page
 url_system: "{{ api_url }}/system"

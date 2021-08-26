@@ -3,7 +3,7 @@
   include_vars: "host_vars/{{ host }}.yml"
 
 - name: Setting up the network global configuration
-  import_tasks: "nfs/main.yml"
+  include_vars: "nfs/main.yml"
   vars:
     pool_name: "{{ item.pool_name }}"
     pool_type_raid: "{{ item.pool_type_raid }}"
