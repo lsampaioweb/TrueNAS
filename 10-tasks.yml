@@ -1,11 +1,11 @@
 ---
-- name: Setting up the system's preferences
+- name: Setting up the network
   hosts: "ControlMachine"
   
   tasks:
     - name: Calling the role that contains all the necessary tasks
       include_role:
-        name: "02-system"
+        name: "10-tasks"
       loop: "{{ groups['TrueNAS'] }}"
       loop_control:
         loop_var: "host"

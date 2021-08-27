@@ -1,11 +1,11 @@
 ---
-- name: Setting up the system's preferences
+- name: Setting up NFS and iSCSI sharing
   hosts: "ControlMachine"
   
   tasks:
     - name: Calling the role that contains all the necessary tasks
       include_role:
-        name: "02-system"
+        name: "09-sharing"
       loop: "{{ groups['TrueNAS'] }}"
       loop_control:
         loop_var: "host"
