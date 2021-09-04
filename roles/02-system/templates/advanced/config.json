@@ -6,7 +6,7 @@
   "powerdaemon": false,
   "swapondrive": 2,
   "overprovision": 0,
-  "consolemsg": false,
+  "consolemsg": true,
   "traceback": true,
   "advancedmode": true,
   "autotune": true,

@@ -1,0 +1,35 @@
+---
+- name: Initializing the variables that will be used on the task
+  set_fact:
+    current_settings: []
+    ntp_server_id: ""
+    different_settings: {}
+
+- name: Reading the json file that contains the desired settings
+  include_tasks: "{{ role_common_task_shared_get_desired_settings }}"
+  vars:
+    template_file: "ntpserver/config.json"
+
+- name: Getting the list of existing ntp servers and searching for the settings of the {{ ntp_server }}
+  include_tasks: "get-list-and-search.yml"
+
+- name: Comparing the desired and current settings
+  include_tasks: "{{ role_common_task_shared_compare_dict_json }}"
+  vars:
+    dict: "{{ desired_settings }}"
+    json: "{{ current_settings }}"
+  when: (current_settings | length > 0)
+
+- name: Setting the settings for the NTP server "{{ ntp_server }}"
+  include_tasks: "{{ role_common_task_shared_update_settings }}"
+  vars:
+    ntp_server_id: "{{ current_settings.id }}"
+    task_file: "{{ role_common_task_uri_system_ntpserver_update }}"
+  when: (different_settings | length > 0)
+
+- name: Creating the NTP server "{{ ntp_server }}"
+  include_tasks: "{{ role_common_task_shared_update_settings }}"
+  vars:
+    task_file: "{{ role_common_task_uri_system_ntpserver_create }}"
+    different_settings: "{{ desired_settings }}"
+  when: (current_settings | length == 0)

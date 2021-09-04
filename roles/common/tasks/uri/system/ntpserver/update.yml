@@ -1,0 +1,5 @@
+---
+- name: Setting the NTP server settings
+  include_tasks: "{{ role_common_task_web_put }}"
+  vars:
+    url: "{{ url_system_ntpserver_by_id }}/{{ ntp_server_id }}"

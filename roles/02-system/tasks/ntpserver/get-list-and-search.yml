@@ -1,0 +1,12 @@
+---
+- name: Getting the list of ntp servers
+  include_tasks: "{{ role_common_task_shared_get_current_settings }}"
+  vars:
+    task_file: "{{ role_common_task_uri_system_ntpserver_get }}"
+
+- name: Searching for the settings of the {{ ntp_server }} NTP server from the list of servers
+  set_fact:
+    current_settings: "{{ response.json | json_query(querystr) | first | default([]) }}"
+  vars:
+    querystr: "[?address=='{{ ntp_server }}']"
+  when: (response.json | length > 0)

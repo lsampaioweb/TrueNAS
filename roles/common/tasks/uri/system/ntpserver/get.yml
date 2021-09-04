@@ -1,0 +1,5 @@
+---
+- name: Getting the current NTP server settings
+  include_tasks: "{{ role_common_task_web_get }}"
+  vars:
+    url: "{{ url_system_ntpserver }}"

@@ -15,10 +15,13 @@ Run the command in the terminal:
 ## 2. Setup the system general settings:
   1. Setup the general settings with the default values.
 
-## 3. Setup the system advanced settings:
+## 3. Setup the Brazilian NTP servers settings:
+  1. Setup the Brazilian NTP servers with the default values.
+
+## 4. Setup the system advanced settings:
   1. Setup the advanced settings with the default values.
 
-## 4. Setup the mail settings:
+## 5. Setup the mail settings:
   1. Setup the mail settings with the default values.
 
 # Created by: 

@@ -9,7 +9,7 @@
     current_settings: "{{ response.json | json_query(querystr) | first | default([]) }}"
   vars:
     querystr: "[?name=='{{ pool_name }}']"
-  when: (response.json != [])
+  when: (response.json | length > 0)
 
 - name: Extracting the pool id, raid type and list of disks from the {{ pool_name }} pool
   set_fact:

@@ -8,9 +8,9 @@
   "mountd_port": null,
   "rpclockd_port": null,
   "rpcstatd_port": null,
-  "udp": false,
+  "udp": true,
   "allow_nonroot": false,
   "userd_manage_gids": false,
-  "mountd_log": false,
-  "statd_lockd_log": false
+  "mountd_log": true,
+  "statd_lockd_log": true
 }

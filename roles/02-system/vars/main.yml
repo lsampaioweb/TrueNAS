@@ -1,0 +1,7 @@
+---
+# Brazilian NTP Servers.
+ntp_servers:
+  - "0.br.pool.ntp.org"
+  - "1.br.pool.ntp.org"
+  - "2.br.pool.ntp.org"
+  - "3.br.pool.ntp.org"

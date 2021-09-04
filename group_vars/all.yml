@@ -53,6 +53,9 @@ role_common_task_shared: "{{ role_common_task }}/shared"
 # The path of the shared compare dict vs json task.
 role_common_task_shared_compare_dict_json: "{{ role_common_task_shared }}/compare-dict-json.yml"
 
+# The path of the shared delete settings task.
+role_common_task_shared_delete_settings: "{{ role_common_task_shared }}/delete-settings.yml"
+
 # The path of the shared generic get compare update settings task.
 role_common_task_shared_get_compare_update_settings: "{{ role_common_task_shared }}/get-compare-update-settings.yml"
 
@@ -188,6 +191,21 @@ role_common_task_uri_system_mail_get: "{{ role_common_task_uri_system_mail }}/ge
 # The path of the uri system mail update task.
 role_common_task_uri_system_mail_update: "{{ role_common_task_uri_system_mail }}/update.yml"
 
+# The path of the uri system ntpserver folder.
+role_common_task_uri_system_ntpserver: "{{ role_common_task_uri_system }}/ntpserver"
+
+# The path of the uri system ntpserver create task.
+role_common_task_uri_system_ntpserver_create: "{{ role_common_task_uri_system_ntpserver }}/create.yml"
+
+# The path of the uri system ntpserver delete task.
+role_common_task_uri_system_ntpserver_delete: "{{ role_common_task_uri_system_ntpserver }}/delete.yml"
+
+# The path of the uri system ntpserver get task.
+role_common_task_uri_system_ntpserver_get: "{{ role_common_task_uri_system_ntpserver }}/get.yml"
+
+# The path of the uri system ntpserver update task.
+role_common_task_uri_system_ntpserver_update: "{{ role_common_task_uri_system_ntpserver }}/update.yml"
+
 # The path of the uri system state folder.
 role_common_task_uri_system_state: "{{ role_common_task_uri_system }}/state"
 
@@ -196,6 +214,9 @@ role_common_task_uri_system_state_get: "{{ role_common_task_uri_system_state }}/
 
 # The path of the web folder.
 role_common_task_web: "{{ role_common_task }}/web"
+
+# The path of the web delete task.
+role_common_task_web_delete: "{{ role_common_task_web }}/delete.yml"
 
 # The path of the web get task.
 role_common_task_web_get: "{{ role_common_task_web }}/get.yml"
@@ -268,6 +289,12 @@ url_system_general_ui_restart: "{{ url_system_general }}/ui_restart"
 
 # The url of the system mail page
 url_system_mail: "{{ api_url }}/mail"
+
+# The url of the system ntpserver page
+url_system_ntpserver: "{{ url_system }}/ntpserver"
+
+# The url of the system ntpserver set page
+url_system_ntpserver_by_id: "{{ url_system_ntpserver }}/id"
 
 # The url of the system state page
 url_system_state: "{{ url_system }}/state"

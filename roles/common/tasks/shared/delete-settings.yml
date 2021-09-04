@@ -1,0 +1,3 @@
+---
+- name: Deleting the settings
+  include_tasks: "{{ task_file }}"

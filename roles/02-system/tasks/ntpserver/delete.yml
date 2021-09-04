@@ -1,0 +1,37 @@
+---
+- name: Initializing the variables that will be used on the task
+  set_fact:
+    current_servers: []
+    different_settings: []
+
+- name: Getting the list of NTP servers
+  include_tasks: "{{ role_common_task_shared_get_current_settings }}"
+  vars:
+    task_file: "{{ role_common_task_uri_system_ntpserver_get }}"
+
+- name: Extracting the id and address of the NTP servers
+  set_fact:
+    current_servers: "{{ response.json | json_query(querystr) }}"
+  vars:
+    querystr: "[*].{ id: id, address: address }"
+  when: (response.json | length > 0)
+    
+- name: Comparing the desired and current NTP servers
+  set_fact:
+    different_settings: "{{ (current not in ntp_servers) | ternary(different_settings + [server.id], different_settings) }}"
+  changed_when: "(current not in ntp_servers)"
+  vars:
+    current: "{{ server.address }}"
+  loop: "{{ current_servers }}"
+  loop_control:
+    loop_var: "server"
+    label: "{{ server.address }}"
+  when: (current_servers | length > 0)
+
+- name: Deleting other NTP servers
+  include_tasks: "{{ role_common_task_shared_delete_settings }}"
+  vars:
+    ntp_server_id: "{{ item }}"
+    task_file: "{{ role_common_task_uri_system_ntpserver_delete }}"
+  loop: "{{ different_settings }}"
+  when: (different_settings | length > 0)

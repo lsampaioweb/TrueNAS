@@ -1,0 +1,6 @@
+---
+- name: Deleting the NTP server settings
+  include_tasks: "{{ role_common_task_web_delete }}"
+  vars:
+    url: "{{ url_system_ntpserver_by_id }}/{{ ntp_server_id }}"
+    changed_when: "{{ response.status in [200] }}"

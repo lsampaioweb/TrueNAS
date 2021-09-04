@@ -1,0 +1,8 @@
+{
+  "address": "{{ ntp_server }}",
+  "burst": false,
+  "iburst": true,
+  "prefer": false,
+  "minpoll": 6,
+  "maxpoll": 10
+}

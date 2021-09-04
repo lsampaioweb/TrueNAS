@@ -25,4 +25,4 @@
         pool_disks: "{{ pool_gold_disks }}" 
       }
   loop_control:
-    label: "{{ item.pool_name}}"
+    label: "{{ item.pool_name }}"
