@@ -23,7 +23,7 @@
     new_json_object: "{{ { 'name' : pool_name, 'encryption' : encryption, 'topology' : { 'data' : [{ 'type' : found_pool_type_raid[0], 'disks' : found_pool_disks | sort }] }} }}"
   vars:
     encryption: "{{ (found_pool_encryption == '0') | ternary(false, true) }}"
-  when: (current_settings != [])
+  when: (current_settings | length > 0)
 
 - name: Comparing the desired and current settings
   include_tasks: "{{ role_common_task_shared_compare_dict_json }}"
@@ -44,7 +44,7 @@
     task_file: "{{ role_common_task_uri_storage_pool_create }}"
     different_settings: "{{ desired_settings }}"
   register: "create_pool"
-  when: (current_settings == [])
+  when: (current_settings | length == 0)
 
 - name: Pausing the play until the "{{ pool_name }}" pool is ONLINE
   include_tasks: "get-list-and-search.yml"
@@ -53,4 +53,4 @@
     until: "{{ response.json | json_query(querystr) }}"
     delay: 2
     retries: 30
-  when: (current_settings == [] and create_pool is succeeded)
+  when: (current_settings | length == 0 and create_pool is succeeded)

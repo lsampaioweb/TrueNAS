@@ -20,4 +20,4 @@
   vars:
     query_type: "topology.data[?type=='{{ pool_type_raid }}' && status=='ONLINE'].type"
     query_disks: "topology.data[?type=='{{ pool_type_raid }}'].children[] | [?type=='DISK' && status=='ONLINE'].disk"
-  when: (current_settings != [])
+  when: (current_settings | length > 0)
