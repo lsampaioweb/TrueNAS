@@ -1,0 +1,48 @@
+---
+# The path of the uri service folder.
+role_common_task_uri_service: "{{ role_common_task_uri }}/service"
+
+# The path of the uri service iscsi folder.
+role_common_task_uri_service_iscsi: "{{ role_common_task_uri_service }}/iscsi"
+
+# The path of the uri service iscsi get task.
+role_common_task_uri_service_iscsi_get: "{{ role_common_task_uri_service_iscsi }}/get.yml"
+
+# The path of the uri service iscsi update task.
+role_common_task_uri_service_iscsi_update: "{{ role_common_task_uri_service_iscsi }}/update.yml"
+
+# The path of the uri service nfs folder.
+role_common_task_uri_service_nfs: "{{ role_common_task_uri_service }}/nfs"
+
+# The path of the uri service nfs get task.
+role_common_task_uri_service_nfs_get: "{{ role_common_task_uri_service_nfs }}/get.yml"
+
+# The path of the uri service nfs update task.
+role_common_task_uri_service_nfs_update: "{{ role_common_task_uri_service_nfs }}/update.yml"
+
+# The path of the uri service smart folder.
+role_common_task_uri_service_smart: "{{ role_common_task_uri_service }}/smart"
+
+# The path of the uri service smart get task.
+role_common_task_uri_service_smart_get: "{{ role_common_task_uri_service_smart }}/get.yml"
+
+# The path of the uri service smart update task.
+role_common_task_uri_service_smart_update: "{{ role_common_task_uri_service_smart }}/update.yml"
+
+# The path of the uri service ssh folder.
+role_common_task_uri_service_ssh: "{{ role_common_task_uri_service }}/ssh"
+
+# The path of the uri service ssh get task.
+role_common_task_uri_service_ssh_get: "{{ role_common_task_uri_service_ssh }}/get.yml"
+
+# The path of the uri service ssh update task.
+role_common_task_uri_service_ssh_update: "{{ role_common_task_uri_service_ssh }}/update.yml"
+
+# The path of the service enable task.
+role_common_task_uri_service_enable: "{{ role_common_task_uri_service }}/enable.yml"
+
+# The path of the service get task.
+role_common_task_uri_service_get: "{{ role_common_task_uri_service }}/get.yml"
+
+# The path of the service start task.
+role_common_task_uri_service_start: "{{ role_common_task_uri_service }}/start.yml"

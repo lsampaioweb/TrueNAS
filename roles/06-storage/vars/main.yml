@@ -1,0 +1,12 @@
+---
+# The path of the uri storage pool folder.
+role_common_task_uri_storage_pool: "{{ role_common_task_uri_storage }}/pool"
+
+# The path of the uri storage pool create task.
+role_common_task_uri_storage_pool_create: "{{ role_common_task_uri_storage_pool }}/create.yml"
+
+# The path of the uri storage pool get task.
+role_common_task_uri_storage_pool_get: "{{ role_common_task_uri_storage_pool }}/get.yml"
+
+# The path of the uri storage pool update task.
+role_common_task_uri_storage_pool_update: "{{ role_common_task_uri_storage_pool }}/update.yml"

@@ -2,6 +2,11 @@
 
 The playbook can setup one or more servers running TrueNAS Core 12.
 
+Run the command in the terminal:
+```bash
+  ansible-playbook site.yml --ask-become-pass (or -K)
+```
+
 # Roles you can execute:
 1. [Setup](roles/01-control-machine/README.md) the control machine to run Ansible scripts.
 1. [Setup](roles/02-system/README.md) the system's preferences.

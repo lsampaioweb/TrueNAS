@@ -2,7 +2,7 @@
 
 Run the command in the terminal:
 ```bash
-  ansible-playbook 09-services.yml
+  ansible-playbook 05-services.yml
 ```
 
 # Tasks:

@@ -1,0 +1,12 @@
+---
+# The path of the uri network folder.
+role_common_task_uri_network: "{{ role_common_task_uri }}/network"
+
+# The path of the uri network configuration folder.
+role_common_task_uri_network_configuration: "{{ role_common_task_uri_network }}/configuration"
+
+# The path of the uri network configuration get task.
+role_common_task_uri_network_configuration_get: "{{ role_common_task_uri_network_configuration }}/get.yml"
+
+# The path of the uri network configuration update task.
+role_common_task_uri_network_configuration_update: "{{ role_common_task_uri_network_configuration }}/update.yml"

@@ -5,3 +5,72 @@ ntp_servers:
   - "1.br.pool.ntp.org"
   - "2.br.pool.ntp.org"
   - "3.br.pool.ntp.org"
+
+# The path of the password get task.
+role_common_task_password_get: "{{ role_common_task_passwords }}/get.j2"
+
+# The path of the uri system folder.
+role_common_task_uri_system: "{{ role_common_task_uri }}/system"
+
+# The path of the uri system advanced folder.
+role_common_task_uri_system_advanced: "{{ role_common_task_uri_system }}/advanced"
+
+# The path of the uri system advanced get settings task.
+role_common_task_uri_system_advanced_get: "{{ role_common_task_uri_system_advanced }}/get.yml"
+
+# The path of the uri system advanced update task.
+role_common_task_uri_system_advanced_update: "{{ role_common_task_uri_system_advanced }}/update.yml"
+
+# The path of the uri certificate folder.
+role_common_task_uri_system_certificate: "{{ role_common_task_uri_system }}/certificate"
+
+# The path of the uri certificate create task.
+role_common_task_uri_system_certificate_create: "{{ role_common_task_uri_system_certificate }}/create.yml"
+
+# The path of the uri certificate get task.
+role_common_task_uri_system_certificate_get: "{{ role_common_task_uri_system_certificate }}/get.yml"
+
+# The path of the uri certificate update task.
+role_common_task_uri_system_certificate_update: "{{ role_common_task_uri_system_certificate }}/update.yml"
+
+# The path of the uri system general folder.
+role_common_task_uri_system_general: "{{ role_common_task_uri_system }}/general"
+
+# The path of the uri system general get settings task.
+role_common_task_uri_system_general_get: "{{ role_common_task_uri_system_general }}/get.yml"
+
+# The path of the uri system general update task.
+role_common_task_uri_system_general_update: "{{ role_common_task_uri_system_general }}/update.yml"
+
+# The path of the uri system general ui restart task.
+role_common_task_uri_system_general_ui_restart: "{{ role_common_task_uri_system_general }}/ui-restart.yml"
+
+# The path of the uri system mail folder.
+role_common_task_uri_system_mail: "{{ role_common_task_uri_system }}/mail"
+
+# The path of the uri system mail get task.
+role_common_task_uri_system_mail_get: "{{ role_common_task_uri_system_mail }}/get.yml"
+
+# The path of the uri system mail update task.
+role_common_task_uri_system_mail_update: "{{ role_common_task_uri_system_mail }}/update.yml"
+
+# The path of the uri system ntpserver folder.
+role_common_task_uri_system_ntpserver: "{{ role_common_task_uri_system }}/ntpserver"
+
+# The path of the uri system ntpserver create task.
+role_common_task_uri_system_ntpserver_create: "{{ role_common_task_uri_system_ntpserver }}/create.yml"
+
+# The path of the uri system ntpserver delete task.
+role_common_task_uri_system_ntpserver_delete: "{{ role_common_task_uri_system_ntpserver }}/delete.yml"
+
+# The path of the uri system ntpserver get task.
+role_common_task_uri_system_ntpserver_get: "{{ role_common_task_uri_system_ntpserver }}/get.yml"
+
+# The path of the uri system ntpserver update task.
+role_common_task_uri_system_ntpserver_update: "{{ role_common_task_uri_system_ntpserver }}/update.yml"
+
+# The path of the uri system state folder.
+role_common_task_uri_system_state: "{{ role_common_task_uri_system }}/state"
+
+# The path of the uri system state get task.
+role_common_task_uri_system_state_get: "{{ role_common_task_uri_system_state }}/get.yml"

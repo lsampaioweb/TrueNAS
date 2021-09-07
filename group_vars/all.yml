@@ -23,213 +23,6 @@ http_protocol: "https://"
 # The path of the api's.
 api_url: "{{ base_url }}/api/v2.0"
 
-# The path of the tasks in the common role.
-role_common_task: "roles/common/tasks"
-
-# The path of the known_hosts add task.
-role_common_task_known_hosts_add: "{{ role_common_task }}/known_hosts/add.yml"
-
-# The path of the packages folder.
-role_common_task_packages: "{{ role_common_task }}/packages"
-
-# The path of the packages pip task.
-role_common_task_packages_pip: "{{ role_common_task_packages }}/pip.yml"
-
-# The path of the packages sshpass task.
-role_common_task_packages_sshpass: "{{ role_common_task_packages }}/sshpass.yml"
-
-# The path of the passwords folder.
-role_common_task_passwords: "{{ role_common_task }}/passwords"
-
-# The path of the password add task.
-role_common_task_password_add: "{{ role_common_task_passwords }}/add.yml"
-
-# The path of the password get task.
-role_common_task_password_get: "{{ role_common_task_passwords }}/get.j2"
-
-# The path of the shared folder.
-role_common_task_shared: "{{ role_common_task }}/shared"
-
-# The path of the shared compare dict vs json task.
-role_common_task_shared_compare_dict_json: "{{ role_common_task_shared }}/compare-dict-json.yml"
-
-# The path of the shared delete settings task.
-role_common_task_shared_delete_settings: "{{ role_common_task_shared }}/delete-settings.yml"
-
-# The path of the shared generic get compare update settings task.
-role_common_task_shared_get_compare_update_settings: "{{ role_common_task_shared }}/get-compare-update-settings.yml"
-
-# The path of the shared get current settings task.
-role_common_task_shared_get_current_settings: "{{ role_common_task_shared }}/get-current-settings.yml"
-
-# The path of the shared get desired settings task.
-role_common_task_shared_get_desired_settings: "{{ role_common_task_shared }}/get-desired-settings.yml"
-
-# The path of the shared update settings task.
-role_common_task_shared_update_settings: "{{ role_common_task_shared }}/update-settings.yml"
-
-# The path of the uri certificate folder.
-role_common_task_uri: "{{ role_common_task }}/uri"
-
-# The path of the uri network folder.
-role_common_task_uri_network: "{{ role_common_task_uri }}/network"
-
-# The path of the uri network configuration folder.
-role_common_task_uri_network_configuration: "{{ role_common_task_uri_network }}/configuration"
-
-# The path of the uri network configuration get task.
-role_common_task_uri_network_configuration_get: "{{ role_common_task_uri_network_configuration }}/get.yml"
-
-# The path of the uri network configuration update task.
-role_common_task_uri_network_configuration_update: "{{ role_common_task_uri_network_configuration }}/update.yml"
-
-# The path of the uri service folder.
-role_common_task_uri_service: "{{ role_common_task_uri }}/service"
-
-# The path of the uri service iscsi folder.
-role_common_task_uri_service_iscsi: "{{ role_common_task_uri_service }}/iscsi"
-
-# The path of the uri service iscsi get task.
-role_common_task_uri_service_iscsi_get: "{{ role_common_task_uri_service_iscsi }}/get.yml"
-
-# The path of the uri service iscsi update task.
-role_common_task_uri_service_iscsi_update: "{{ role_common_task_uri_service_iscsi }}/update.yml"
-
-# The path of the uri service nfs folder.
-role_common_task_uri_service_nfs: "{{ role_common_task_uri_service }}/nfs"
-
-# The path of the uri service nfs get task.
-role_common_task_uri_service_nfs_get: "{{ role_common_task_uri_service_nfs }}/get.yml"
-
-# The path of the uri service nfs update task.
-role_common_task_uri_service_nfs_update: "{{ role_common_task_uri_service_nfs }}/update.yml"
-
-# The path of the uri service smart folder.
-role_common_task_uri_service_smart: "{{ role_common_task_uri_service }}/smart"
-
-# The path of the uri service smart get task.
-role_common_task_uri_service_smart_get: "{{ role_common_task_uri_service_smart }}/get.yml"
-
-# The path of the uri service smart update task.
-role_common_task_uri_service_smart_update: "{{ role_common_task_uri_service_smart }}/update.yml"
-
-# The path of the uri service ssh folder.
-role_common_task_uri_service_ssh: "{{ role_common_task_uri_service }}/ssh"
-
-# The path of the uri service ssh get task.
-role_common_task_uri_service_ssh_get: "{{ role_common_task_uri_service_ssh }}/get.yml"
-
-# The path of the uri service ssh update task.
-role_common_task_uri_service_ssh_update: "{{ role_common_task_uri_service_ssh }}/update.yml"
-
-# The path of the service enable task.
-role_common_task_uri_service_enable: "{{ role_common_task_uri_service }}/enable.yml"
-
-# The path of the service get task.
-role_common_task_uri_service_get: "{{ role_common_task_uri_service }}/get.yml"
-
-# The path of the service start task.
-role_common_task_uri_service_start: "{{ role_common_task_uri_service }}/start.yml"
-
-# The path of the uri storage folder.
-role_common_task_uri_storage: "{{ role_common_task_uri }}/storage"
-
-# The path of the uri storage pool folder.
-role_common_task_uri_storage_pool: "{{ role_common_task_uri_storage }}/pool"
-
-# The path of the uri storage pool create task.
-role_common_task_uri_storage_pool_create: "{{ role_common_task_uri_storage_pool }}/create.yml"
-
-# The path of the uri storage pool get task.
-role_common_task_uri_storage_pool_get: "{{ role_common_task_uri_storage_pool }}/get.yml"
-
-# The path of the uri storage pool update task.
-role_common_task_uri_storage_pool_update: "{{ role_common_task_uri_storage_pool }}/update.yml"
-
-# The path of the uri system folder.
-role_common_task_uri_system: "{{ role_common_task_uri }}/system"
-
-# The path of the uri system advanced folder.
-role_common_task_uri_system_advanced: "{{ role_common_task_uri_system }}/advanced"
-
-# The path of the uri system advanced get settings task.
-role_common_task_uri_system_advanced_get: "{{ role_common_task_uri_system_advanced }}/get.yml"
-
-# The path of the uri system advanced update task.
-role_common_task_uri_system_advanced_update: "{{ role_common_task_uri_system_advanced }}/update.yml"
-
-# The path of the uri certificate folder.
-role_common_task_uri_system_certificate: "{{ role_common_task_uri_system }}/certificate"
-
-# The path of the uri certificate create task.
-role_common_task_uri_system_certificate_create: "{{ role_common_task_uri_system_certificate }}/create.yml"
-
-# The path of the uri certificate get task.
-role_common_task_uri_system_certificate_get: "{{ role_common_task_uri_system_certificate }}/get.yml"
-
-# The path of the uri certificate update task.
-role_common_task_uri_system_certificate_update: "{{ role_common_task_uri_system_certificate }}/update.yml"
-
-# The path of the uri system general folder.
-role_common_task_uri_system_general: "{{ role_common_task_uri_system }}/general"
-
-# The path of the uri system general get settings task.
-role_common_task_uri_system_general_get: "{{ role_common_task_uri_system_general }}/get.yml"
-
-# The path of the uri system general update task.
-role_common_task_uri_system_general_update: "{{ role_common_task_uri_system_general }}/update.yml"
-
-# The path of the uri system general ui restart task.
-role_common_task_uri_system_general_ui_restart: "{{ role_common_task_uri_system_general }}/ui-restart.yml"
-
-# The path of the uri system mail folder.
-role_common_task_uri_system_mail: "{{ role_common_task_uri_system }}/mail"
-
-# The path of the uri system mail get task.
-role_common_task_uri_system_mail_get: "{{ role_common_task_uri_system_mail }}/get.yml"
-
-# The path of the uri system mail update task.
-role_common_task_uri_system_mail_update: "{{ role_common_task_uri_system_mail }}/update.yml"
-
-# The path of the uri system ntpserver folder.
-role_common_task_uri_system_ntpserver: "{{ role_common_task_uri_system }}/ntpserver"
-
-# The path of the uri system ntpserver create task.
-role_common_task_uri_system_ntpserver_create: "{{ role_common_task_uri_system_ntpserver }}/create.yml"
-
-# The path of the uri system ntpserver delete task.
-role_common_task_uri_system_ntpserver_delete: "{{ role_common_task_uri_system_ntpserver }}/delete.yml"
-
-# The path of the uri system ntpserver get task.
-role_common_task_uri_system_ntpserver_get: "{{ role_common_task_uri_system_ntpserver }}/get.yml"
-
-# The path of the uri system ntpserver update task.
-role_common_task_uri_system_ntpserver_update: "{{ role_common_task_uri_system_ntpserver }}/update.yml"
-
-# The path of the uri system state folder.
-role_common_task_uri_system_state: "{{ role_common_task_uri_system }}/state"
-
-# The path of the uri system state get task.
-role_common_task_uri_system_state_get: "{{ role_common_task_uri_system_state }}/get.yml"
-
-# The path of the web folder.
-role_common_task_web: "{{ role_common_task }}/web"
-
-# The path of the web delete task.
-role_common_task_web_delete: "{{ role_common_task_web }}/delete.yml"
-
-# The path of the web get task.
-role_common_task_web_get: "{{ role_common_task_web }}/get.yml"
-
-# The path of the web post task.
-role_common_task_web_post: "{{ role_common_task_web }}/post.yml"
-
-# The path of the web put task.
-role_common_task_web_put: "{{ role_common_task_web }}/put.yml"
-
-# The path of the web request task.
-role_common_task_web_request: "{{ role_common_task_web }}/request.yml"
-
 # The url of the network page
 url_network: "{{ api_url }}/network"
 
@@ -301,3 +94,54 @@ url_system_state: "{{ url_system }}/state"
 
 # The url of the certificate page
 url_certificate: "{{ api_url }}/certificate"
+
+# The path of the tasks in the common role.
+role_common_task: "roles/common/tasks"
+
+# The path of the passwords folder.
+role_common_task_passwords: "{{ role_common_task }}/passwords"
+
+# The path of the shared folder.
+role_common_task_shared: "{{ role_common_task }}/shared"
+
+# The path of the shared compare dict vs json task.
+role_common_task_shared_compare_dict_json: "{{ role_common_task_shared }}/compare-dict-json.yml"
+
+# The path of the shared delete settings task.
+role_common_task_shared_delete_settings: "{{ role_common_task_shared }}/delete-settings.yml"
+
+# The path of the shared generic get compare update settings task.
+role_common_task_shared_get_compare_update_settings: "{{ role_common_task_shared }}/get-compare-update-settings.yml"
+
+# The path of the shared get current settings task.
+role_common_task_shared_get_current_settings: "{{ role_common_task_shared }}/get-current-settings.yml"
+
+# The path of the shared get desired settings task.
+role_common_task_shared_get_desired_settings: "{{ role_common_task_shared }}/get-desired-settings.yml"
+
+# The path of the shared update settings task.
+role_common_task_shared_update_settings: "{{ role_common_task_shared }}/update-settings.yml"
+
+# The path of the uri certificate folder.
+role_common_task_uri: "{{ role_common_task }}/uri"
+
+# The path of the uri storage folder.
+role_common_task_uri_storage: "{{ role_common_task_uri }}/storage"
+
+# The path of the web folder.
+role_common_task_web: "{{ role_common_task }}/web"
+
+# The path of the web delete task.
+role_common_task_web_delete: "{{ role_common_task_web }}/delete.yml"
+
+# The path of the web get task.
+role_common_task_web_get: "{{ role_common_task_web }}/get.yml"
+
+# The path of the web post task.
+role_common_task_web_post: "{{ role_common_task_web }}/post.yml"
+
+# The path of the web put task.
+role_common_task_web_put: "{{ role_common_task_web }}/put.yml"
+
+# The path of the web request task.
+role_common_task_web_request: "{{ role_common_task_web }}/request.yml"

@@ -5,3 +5,18 @@ sshpass :
   url: "https://sourceforge.net/projects/sshpass/files/sshpass/1.09/sshpass-1.09.tar.gz"
   folder_path: "~/.ansible/tmp/"
   folder_name: "sshpass-1.09"
+
+# The path of the known_hosts add task.
+role_common_task_known_hosts_add: "{{ role_common_task }}/known_hosts/add.yml"
+
+# The path of the packages folder.
+role_common_task_packages: "{{ role_common_task }}/packages"
+
+# The path of the packages pip task.
+role_common_task_packages_pip: "{{ role_common_task_packages }}/pip.yml"
+
+# The path of the packages sshpass task.
+role_common_task_packages_sshpass: "{{ role_common_task_packages }}/sshpass.yml"
+
+# The path of the password add task.
+role_common_task_password_add: "{{ role_common_task_passwords }}/add.yml"
