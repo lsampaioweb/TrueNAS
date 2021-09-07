@@ -2,14 +2,15 @@
 - name: Including the file that contains specific settings
   include_vars: "host_vars/{{ host }}.yml"
 
-- name: Setting up the SSH service
-  import_tasks: "ssh/main.yml"
-
-- name: Setting up the S.M.A.R.T. service
-  import_tasks: "smart/main.yml"
-
-- name: Setting up the NFS service
-  import_tasks: "nfs/main.yml"
-
-- name: Setting up the iSCSI service
-  import_tasks: "iscsi/main.yml"
+- name: Setting up the services
+  include_tasks: "service.yml"
+  vars:
+    service_display_name: "{{ item.service_display_name }}"
+    service_name        : "{{ item.service_name }}"
+  loop:
+    - { service_display_name: "SSH"       , service_name: "ssh"         }
+    - { service_display_name: "S.M.A.R.T" , service_name: "smartd"      }
+    - { service_display_name: "NFS"       , service_name: "nfs"         }
+    - { service_display_name: "iSCSI"     , service_name: "iscsitarget" }
+  loop_control:
+    label: "{{ item.service_display_name }}"

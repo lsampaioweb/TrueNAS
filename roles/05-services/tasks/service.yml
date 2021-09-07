@@ -2,22 +2,22 @@
 - name: Getting the list of services 
   include_tasks: "{{ role_common_task_uri_service_get }}"
 
-- name: Getting the current settings of the {{ item.display_name }} service
+- name: Extracting the current settings of the {{ service_display_name }} from the returned info
   set_fact:
     json: "{{ response.json | json_query(querystr) | first }}"
   vars:
-    querystr: "[?service=='{{ item.name }}']"
+    querystr: "[?service=='{{ service_name }}']"
 
 - name: Including the task that will setup the service with the desired values
-  include_tasks: "{{ item.name }}/config.yml"
+  include_tasks: "{{ service_name }}/main.yml"
 
-- name: Enabling the {{ item.display_name }} service to start on boot
+- name: Enabling the {{ service_display_name }} service to start on boot
   include_tasks: "{{ role_common_task_uri_service_enable }}"
   vars:
     service_id: "{{ json.id }}"
   when: json.enable != true
 
-- name: Starting the {{ item.display_name }} service
+- name: Starting the {{ service_display_name }} service
   include_tasks: "{{ role_common_task_uri_service_start }}"
   vars:
     service: "{{ json.service }}"
