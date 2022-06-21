@@ -3,7 +3,7 @@
 debug: false
 
 # The domain name of the HomeLab.
-domain: "aprendendo.com.br"
+domain: "homelab"
 
 # The id that will be used to retrieve the truenas's root password saved in the MacOSX Keychain. It will be the same for all hosts.
 root_password_id: "truenas-root-password"
